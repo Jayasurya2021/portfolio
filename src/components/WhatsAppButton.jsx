@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-white text-black px-4 py-2 rounded-xl shadow-lg border border-gray-100 text-sm font-medium tracking-wide whitespace-nowrap"
+                        className="bg-white text-black px-3 py-2 rounded-xl shadow-lg border border-gray-100 text-sm font-medium tracking-wide whitespace-nowrap"
                     >
                         Need a Quick Follow-Up?
                         <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-gray-100 transform rotate-45"></div>
@@ -35,12 +35,12 @@ export default function WhatsAppButton() {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative flex items-center bg-black/90 backdrop-blur-md text-white rounded-full p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10 hover:shadow-[0_8px_40px_rgba(37,211,102,0.3)] transition-all duration-300"
+                className="group relative flex items-center bg-black/90 backdrop-blur-md text-white rounded-full p-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10 hover:shadow-[0_8px_40px_rgba(37,211,102,0.3)] transition-all duration-300"
             >
                 {/* Soft glow effect */}
                 <div className="absolute inset-0 bg-[#25D366] rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
 
-                <div className="relative z-10 flex items-center gap-3">
+                <div className="relative z-10 flex items-center">
                     <svg
                         viewBox="0 0 24 24"
                         width="28"

@@ -68,10 +68,10 @@ const projects = [
     },
     {
         id: 4,
-        title: 'Nebula Smart House',
-        subtitle: 'Smart Residence · California',
+        title: 'Vehicle Assist',
+        subtitle: 'Connecting Drivers with Instant Vehicle Support',
         description:
-            'A fully AI-controlled residence where lighting, climate, security, and entertainment adapt in real time to the inhabitant. Winner of the 2025 Innovation in Living Award.',
+            'Vehicle Assist is a smart platform connecting drivers with roadside services, emergency support, maintenance tracking, and real-time assistance.',
         features: [
             'Self-learning environmental controls',
             'Grid-independent energy storage',
@@ -102,7 +102,7 @@ function StackedCard({ project, index, total }) {
 
     return (
         <div
-            className="sticky w-full flex justify-center"
+            className="sticky w-full h-full flex justify-center"
             style={{
                 top: stickyTop,
                 marginBottom: scrollSpacing,
@@ -143,7 +143,7 @@ function StackedCard({ project, index, total }) {
                     {/* Live Project Button */}
                     <a
                         href={project.demo}
-                        className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-gray-700 font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300 transform group-hover:scale-105"
+                        className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-black font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:!text-white hover:border-gray-900 transition-all duration-300 transform group-hover:scale-105"
                     >
                         Live Project
                     </a>
@@ -192,7 +192,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className="w-full md:w-7/12 h-56 md:h-full relative overflow-hidden bg-gray-200 shrink-0">
+                    <div className="w-full md:w-7/12 relative overflow-hidden bg-gray-200 shrink-0">
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
