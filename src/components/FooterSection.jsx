@@ -59,7 +59,7 @@ export default function FooterSection() {
                         href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-black px-8 py-5 rounded-full font-bold uppercase tracking-wider text-sm hover:text-black hover:bg-purple-600 transition-colors duration-300 flex items-center gap-2 shrink-0 group"
+                        className="bg-black !text-white px-8 py-5 rounded-full font-bold uppercase tracking-wider text-sm hover:!text-black hover:bg-purple-600 transition-colors duration-300 flex items-center gap-2 shrink-0 group"
                     >
                         Start Your Project
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
