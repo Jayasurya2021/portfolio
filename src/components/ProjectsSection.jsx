@@ -125,15 +125,15 @@ function StackedCard({ project, index, total }) {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                            className="text-6xl md:text-8xl font-black text-gray-900 tracking-tighter leading-none"
+                            className="text-6xl md:text-6xl font-black text-gray-900 tracking-tighter leading-none"
                         >
                             0{index + 1}
                         </motion.h2>
                         {/* Subtitle & Title */}
                         <div className="flex flex-col justify-center gap-1 mt-1">
-                            <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
+                            {/* <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
                                 {project.subtitle}
-                            </span>
+                            </span> */}
                             <h3 className="text-xl md:text-3xl font-black text-gray-900 uppercase tracking-wider">
                                 {project.title}
                             </h3>
@@ -160,8 +160,8 @@ function StackedCard({ project, index, total }) {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            <h4 className="text-3xl md:text-5xl font-black text-gray-900 uppercase tracking-tight mb-4 md:mb-6 leading-none">
-                                {project.title}
+                            <h4 className="text-3xl md:text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 md:mb-6 leading-none">
+                                {project.subtitle}
                             </h4>
                             <p className="text-gray-600 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
                                 {project.description}
