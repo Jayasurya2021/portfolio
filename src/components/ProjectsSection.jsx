@@ -153,7 +153,7 @@ function StackedCard({ project, index, total }) {
                 <div className="relative flex-1 w-full bg-gray-50 rounded-[20px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className="w-full md:w-7/12 p-6 md:p-12 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50">
+                    <div className="w-full p-6 md:p-10 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50" style={{ flex: '1 1 40%' }}>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -167,12 +167,12 @@ function StackedCard({ project, index, total }) {
                                 {project.description}
                             </p>
 
-                            <div className="flex flex-col gap-6 mt-auto">
+                            <div className="flex flex-col mt-auto">
                                 <div>
                                     <span className={`text-xs font-bold uppercase tracking-widest mb-3 block ${project.textAccent}`}>
                                         Technologies
                                     </span>
-                                    <div className="flex flex-wrap gap-2">
+                                    <div className="flex flex-wrap">
                                         {project.tech.map((t, i) => (
                                             <motion.span
                                                 initial={{ opacity: 0, y: 10 }}
@@ -192,7 +192,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className="w-full md:w-5/12 relative overflow-hidden bg-gray-200 shrink-0">
+                    <div className="w-full relative overflow-hidden bg-gray-200 shrink-0" style={{ flex: '0 0 60%' }}>
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
