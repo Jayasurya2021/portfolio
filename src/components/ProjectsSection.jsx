@@ -131,12 +131,12 @@ function StackedCard({ project, index, total }) {
                         </motion.h2>
                         {/* Subtitle & Title */}
                         <div className="flex flex-col justify-center gap-1 mt-1">
-                            {/* <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
-                                {project.subtitle}
-                            </span> */}
                             <h3 className="text-xl md:text-3xl font-black text-gray-900 uppercase tracking-wider">
                                 {project.title}
                             </h3>
+                            <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
+                                {project.subtitle}
+                            </span>
                         </div>
                     </div>
 
@@ -153,16 +153,13 @@ function StackedCard({ project, index, total }) {
                 <div className="relative flex-1 w-full bg-gray-50 rounded-[20px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className="w-full p-6 md:p-10 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50" style={{ flex: '1 1 40%' }}>
+                    <div className="w-full p-6 md:p-8 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50" style={{ flex: '1 1 40%' }}>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                         >
-                            <h4 className="text-3xl md:text-2xl font-black text-gray-900 uppercase tracking-tight mb-4 md:mb-6 leading-none">
-                                {project.subtitle}
-                            </h4>
                             <p className="text-gray-600 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
                                 {project.description}
                             </p>

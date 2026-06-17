@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, memo } from 'react'
 import { motion, AnimatePresence, useSpring, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import GradualBlur from './Animation/GradualBlur'
@@ -100,7 +100,7 @@ const services = [
 /* ─────────────────────────────────────────────
    SERVICE ROW COMPONENT
 ───────────────────────────────────────────── */
-function ServiceRow({ service, index, activeService, setActiveService }) {
+const ServiceRow = memo(function ServiceRow({ service, index, activeService, setActiveService }) {
     const ref = useRef(null)
     const [ishover, setIsHover] = useState(false)
 
@@ -248,14 +248,13 @@ function ServiceRow({ service, index, activeService, setActiveService }) {
             </div>
         </motion.div>
     )
-}
+})
 
 /* ─────────────────────────────────────────────
    MAIN SERVICES SECTION
 ───────────────────────────────────────────── */
 export default function ServicesSection() {
     const [activeService, setActiveService] = useState(0)
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
     const sectionRef = useRef(null)
 
     const { scrollYProgress } = useScroll({
@@ -264,18 +263,7 @@ export default function ServicesSection() {
     })
 
     const yParallax = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
-    const yParallaxSpring = useSpring(yParallax, { stiffness: 80, damping: 25 })
-
-    const handleMouseMove = useCallback((e) => {
-        const rect = e.currentTarget.getBoundingClientRect()
-        setMousePos({
-            x: (e.clientX - rect.left - rect.width / 2) / rect.width,
-            y: (e.clientY - rect.top - rect.height / 2) / rect.height
-        })
-    }, [])
-
-    const springX = useSpring(mousePos.x * 10, { stiffness: 60, damping: 20 })
-    const springY = useSpring(mousePos.y * 7, { stiffness: 60, damping: 20 })
+    const yParallaxSpring = useSpring(yParallax, { stiffness: 100, damping: 30, mass: 1 })
 
     const current = services[activeService]
 
@@ -284,24 +272,26 @@ export default function ServicesSection() {
             id="services"
             ref={sectionRef}
             className="relative w-full bg-white text-gray-900"
-            onMouseMove={handleMouseMove}
         >
             {/* ── AMBIENT LIGHT BLOBS (light theme) ── */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
-                    animate={{ scale: [1, 1.25, 1], opacity: [0.4, 0.7, 0.4] }}
-                    transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+                    animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.45, 0.25] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
                     className="absolute top-[10%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-purple-100 blur-[130px]"
+                    style={{ willChange: 'transform, opacity' }}
                 />
                 <motion.div
-                    animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.5, 0.3] }}
-                    transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                    animate={{ scale: [1, 1.25, 1], opacity: [0.2, 0.35, 0.2] }}
+                    transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
                     className="absolute bottom-[5%] right-[0%] w-[35vw] h-[35vw] rounded-full bg-blue-100 blur-[130px]"
+                    style={{ willChange: 'transform, opacity' }}
                 />
                 <motion.div
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-                    transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 5 }}
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.3, 0.15] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut', delay: 6 }}
                     className="absolute top-[50%] left-[40%] w-[20vw] h-[20vw] rounded-full bg-indigo-100 blur-[100px]"
+                    style={{ willChange: 'transform, opacity' }}
                 />
             </div>
 
@@ -356,15 +346,13 @@ export default function ServicesSection() {
                     {/* Right: Sticky Preview (Desktop) */}
                     <div className="hidden lg:block lg:w-[42%] relative">
                         <div className="sticky top-[12vh] h-[76vh]">
-                            {/* Parallax wrapper */}
-                            <motion.div
-                                style={{ x: springX, y: springY }}
-                                className="w-full h-full"
-                            >
+                            {/* Image container - simplified without mouse parallax */}
+                            <div className="w-full h-full">
                                 <div
                                     className="relative w-full h-full rounded-[32px] overflow-hidden border border-gray-100"
                                     style={{
-                                        boxShadow: `0 24px 80px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04), 0 0 60px -20px ${current.accentColor}33`
+                                        boxShadow: `0 24px 80px -12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04), 0 0 60px -20px ${current.accentColor}33`,
+                                        willChange: 'box-shadow'
                                     }}
                                 >
                                     {/* Cinematic image crossfade */}
@@ -377,7 +365,7 @@ export default function ServicesSection() {
                                             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                                             exit={{ opacity: 0, scale: 0.96, filter: 'blur(8px)' }}
                                             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                                            style={{ y: yParallaxSpring }}
+                                            style={{ y: yParallaxSpring, willChange: 'transform' }}
                                             className="absolute -top-[15%] left-0 w-full h-[130%] object-cover z-10"
                                         />
                                     </AnimatePresence>
@@ -432,7 +420,7 @@ export default function ServicesSection() {
                                     {/* Subtle glass ring */}
                                     <div className="absolute inset-0 rounded-[32px] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] z-30 pointer-events-none" />
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Colored glow bloom below image */}
                             <motion.div
