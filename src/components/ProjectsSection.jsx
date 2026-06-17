@@ -114,7 +114,7 @@ function StackedCard({ project, index, total }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="w-full max-w-6xl h-[80vh] md:h-[75vh] rounded-[40px] bg-white border border-gray-200 p-6 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
+                className="w-full max-w-9xl h-[90vh] md:h-[85vh] rounded-[25px] bg-white border border-gray-200 p-6 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
             >
                 {/* ── HEADER ── */}
                 <div className="flex justify-between items-start mb-6 md:mb-8 w-full shrink-0">
@@ -153,7 +153,7 @@ function StackedCard({ project, index, total }) {
                 <div className="relative flex-1 w-full bg-gray-50 rounded-[20px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className="w-full md:w-5/12 p-6 md:p-12 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50">
+                    <div className="w-full md:w-7/12 p-6 md:p-12 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -192,7 +192,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className="w-full md:w-7/12 relative overflow-hidden bg-gray-200 shrink-0">
+                    <div className="w-full md:w-5/12 relative overflow-hidden bg-gray-200 shrink-0">
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
