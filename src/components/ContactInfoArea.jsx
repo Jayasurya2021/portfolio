@@ -49,7 +49,7 @@ export default function ContactInfoArea() {
                             <Phone size={24} />
                         </div>
                         <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Phone</h4>
-                        <p className="text-gray-600 font-light">+91 XXXXX XXXXX</p>
+                        <p className="text-gray-600 font-light">+91 63854 67340</p>
                     </motion.div>
 
                     {/* Location Card */}
@@ -64,7 +64,7 @@ export default function ContactInfoArea() {
                             <MapPin size={24} />
                         </div>
                         <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Location</h4>
-                        <p className="text-gray-600 font-light">Tamil Nadu, India</p>
+                        <p className="text-gray-600 font-light">Chennai, Tamil Nadu</p>
                     </motion.div>
 
                     {/* Working Hours Card */}

@@ -7,7 +7,7 @@ import {
     ChevronLeft
 } from 'lucide-react'
 import '../App.css'
-import SmokeCursor from './Animation/SmokeCursor'
+import { SmoothCursor } from './ui/smooth-cursor'
 import HeroVideoBanner from './HeroVideoBanner'
 import ProjectsSection from './ProjectsSection';
 import AboutSection from './AboutSection';
@@ -224,8 +224,8 @@ function MainPage() {
     ]
 
     return (
-        <div className="app-container">
-            <SmokeCursor />
+        <div className="app-container cursor-none">
+            <SmoothCursor />
 
             {/* ── HEADER ── */}
             <motion.header

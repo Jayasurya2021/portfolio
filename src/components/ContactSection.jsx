@@ -95,22 +95,22 @@ export default function ContactSection() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                         <div>
                                             <label className={labelClasses}>Full Name *</label>
-                                            <input required type="text" name="name" value={formData.name} onChange={handleChange} className={inputClasses} placeholder="John Doe" />
+                                            <input required type="text" name="name" value={formData.name} onChange={handleChange} className={inputClasses} placeholder="Enter Your Name" />
                                         </div>
                                         <div>
                                             <label className={labelClasses}>Company / Business Name</label>
-                                            <input type="text" name="company" value={formData.company} onChange={handleChange} className={inputClasses} placeholder="Acme Corp" />
+                                            <input type="text" name="company" value={formData.company} onChange={handleChange} className={inputClasses} placeholder="Enter Your Company Name" />
                                         </div>
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                         <div>
                                             <label className={labelClasses}>Email Address *</label>
-                                            <input required type="email" name="email" value={formData.email} onChange={handleChange} className={inputClasses} placeholder="john@example.com" />
+                                            <input required type="email" name="email" value={formData.email} onChange={handleChange} className={inputClasses} placeholder="Enter Your Email" />
                                         </div>
                                         <div>
                                             <label className={labelClasses}>Phone Number *</label>
-                                            <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClasses} placeholder="+91 98765 43210" />
+                                            <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClasses} placeholder="Enter Your Mobile Number" />
                                         </div>
                                     </div>
 
@@ -132,11 +132,11 @@ export default function ContactSection() {
                                             <label className={labelClasses}>Budget Range</label>
                                             <select name="budget" value={formData.budget} onChange={handleChange} className={inputClasses}>
                                                 <option value="" disabled>Select budget range</option>
-                                                <option value="under-5k">Under $5,000</option>
-                                                <option value="5k-10k">$5,000 - $10,000</option>
-                                                <option value="10k-25k">$10,000 - $25,000</option>
-                                                <option value="25k-50k">$25,000 - $50,000</option>
-                                                <option value="50k-plus">$50,000+</option>
+                                                <option value="under-5k">Under 5,000</option>
+                                                <option value="5k-10k">5,000 - 10,000</option>
+                                                <option value="10k-25k">10,000 - 25,000</option>
+                                                {/* <option value="25k-50k">$25,000 - $50,000</option>
+                                                <option value="50k-plus">$50,000+</option> */}
                                             </select>
                                         </div>
                                         <div>
@@ -157,15 +157,18 @@ export default function ContactSection() {
                                         <textarea required name="description" value={formData.description} onChange={handleChange} rows="5" className={`${inputClasses} resize-none`} placeholder="Tell us about your project, goals, and any specific requirements..."></textarea>
                                     </div>
 
-                                    <motion.button 
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        type="submit" 
-                                        className="w-full bg-black text-white py-4 md:py-5 rounded-xl font-bold uppercase tracking-wider text-sm hover:bg-purple-600 transition-colors duration-300 flex items-center justify-center gap-2 group"
-                                    >
-                                        Submit Project Inquiry
-                                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                                    </motion.button>
+                                    <div className="flex justify-center">
+                                        <button type="submit" className="animated-button">
+                                            <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                                            </svg>
+                                            <span className="text">Submit Project Inquiry</span>
+                                            <span className="circle"></span>
+                                            <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </motion.form>
                             )}
                         </AnimatePresence>
