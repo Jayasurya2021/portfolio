@@ -31,14 +31,14 @@ export default function AboutSection() {
     const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
     return (
-        <section ref={containerRef} id="about" className="relative w-full bg-white text-black py-20 md:py-40 lg:py-64 overflow-hidden">
+        <section ref={containerRef} id="about" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-white py-20 md:py-40 lg:py-64 overflow-hidden">
 
             {/* Center Timeline Background Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-black/10 -translate-x-1/2 z-0 hidden md:block" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-black/10 dark:bg-white/10 -translate-x-1/2 z-0 hidden md:block" />
 
             {/* Center Timeline Animated Progress Line */}
             <motion.div
-                className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-black -translate-x-1/2 z-0 hidden md:block origin-top"
+                className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-black dark:bg-white -translate-x-1/2 z-0 hidden md:block origin-top"
                 style={{ scaleY }}
             />
 
@@ -56,7 +56,7 @@ export default function AboutSection() {
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 viewport={{ once: false, margin: "-20%" }}
                                 transition={{ duration: 0.6, type: "spring", delay: 0.2 }}
-                                className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-black rounded-full z-20 border-[4px] border-white shadow-sm"
+                                className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-black dark:bg-white rounded-full z-20 border-[4px] border-white dark:border-black shadow-sm"
                             />
 
                             {/* Mobile Layout: Title + Description Stacked */}
@@ -70,7 +70,7 @@ export default function AboutSection() {
                                         scrollEnd="bottom center"
                                         stagger={0.03}
                                         containerClassName="overflow-hidden"
-                                        textClassName="text-2xl sm:text-3xl font-black uppercase tracking-tighter leading-[0.9] text-black"
+                                        textClassName="text-2xl sm:text-3xl font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
                                     >
                                         {block.title}
                                     </ScrollFloat>
@@ -102,7 +102,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black uppercase tracking-tighter leading-[0.9] text-black"
+                                            textClassName="text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
                                         >
                                             {block.title}
                                         </ScrollFloat>
@@ -148,7 +148,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[3.5rem] md:text-[5rem] lg:text-[7.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black"
+                                            textClassName="text-[3.5rem] md:text-[5rem] lg:text-[7.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
                                         >
                                             {block.title}
                                         </ScrollFloat>

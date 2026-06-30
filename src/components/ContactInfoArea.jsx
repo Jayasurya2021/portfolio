@@ -4,7 +4,7 @@ import { MapPin, Mail, Phone, Clock } from 'lucide-react';
 
 export default function ContactInfoArea() {
     return (
-        <section className="relative w-full bg-gray-50 text-black py-20 border-t border-b border-gray-100">
+        <section className="relative w-full bg-gray-50 dark:bg-[#111] text-black dark:text-[#f8fafc] py-20 border-t border-b border-gray-100 dark:border-white/10">
             <div className="container mx-auto px-6 lg:px-12 max-w-[1600px]">
                 
                 <motion.div 
@@ -28,12 +28,12 @@ export default function ContactInfoArea() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                        className="bg-white dark:bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow duration-300"
                     >
                         <div className="w-16 h-16 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
                             <Mail size={24} />
                         </div>
-                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Email</h4>
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-2">Email</h4>
                         <p className="text-gray-600 font-light">hello@youragency.com</p>
                     </motion.div>
 
@@ -43,12 +43,12 @@ export default function ContactInfoArea() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                        className="bg-white dark:bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow duration-300"
                     >
                         <div className="w-16 h-16 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
                             <Phone size={24} />
                         </div>
-                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Phone</h4>
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-2">Phone</h4>
                         <p className="text-gray-600 font-light">+91 63854 67340</p>
                     </motion.div>
 
@@ -58,12 +58,12 @@ export default function ContactInfoArea() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                        className="bg-white dark:bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow duration-300"
                     >
                         <div className="w-16 h-16 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
                             <MapPin size={24} />
                         </div>
-                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Location</h4>
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-2">Location</h4>
                         <p className="text-gray-600 font-light">Chennai, Tamil Nadu</p>
                     </motion.div>
 
@@ -73,12 +73,12 @@ export default function ContactInfoArea() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                        className="bg-white dark:bg-[#0a0a0a] rounded-3xl p-8 flex flex-col items-center text-center shadow-sm border border-gray-100 dark:border-white/10 hover:shadow-md transition-shadow duration-300"
                     >
                         <div className="w-16 h-16 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
                             <Clock size={24} />
                         </div>
-                        <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-2">Working Hours</h4>
+                        <h4 className="text-sm font-semibold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-2">Working Hours</h4>
                         <p className="text-gray-600 font-light">Monday – Saturday<br/>09:00 AM – 08:00 PM</p>
                     </motion.div>
 

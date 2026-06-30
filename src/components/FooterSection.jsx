@@ -36,7 +36,7 @@ export default function FooterSection() {
     ];
 
     return (
-        <footer className="bg-white text-black pt-20 md:pt-20 pb-8 border-t border-gray-100">
+        <footer className="bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] pt-20 md:pt-20 pb-8 border-t border-gray-100 dark:border-white/10">
             <div className="container mx-auto px-4 lg:px-12 max-w-[1600px]">
 
                 {/* CTA Section */}
@@ -45,13 +45,13 @@ export default function FooterSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col md:flex-row items-center justify-between gap-8 pb-20 border-b border-gray-100"
+                    className="flex flex-col md:flex-row items-center justify-between gap-8 pb-20 border-b border-gray-100 dark:border-white/10"
                 >
                     <div className="max-w-3xl text-center md:text-left">
                         <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
                             Ready to start your next project?
                         </h2>
-                        <p className="text-gray-500 text-lg md:text-xl font-light">
+                        <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl font-light">
                             Let's transform your ideas into a modern, scalable, and high-performing digital solution.
                         </p>
                     </div>
@@ -59,7 +59,7 @@ export default function FooterSection() {
                         href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-black !text-white px-8 py-5 rounded-full font-bold uppercase tracking-wider text-sm hover:!text-black hover:bg-purple-600 transition-colors duration-300 flex items-center gap-2 shrink-0 group"
+                        className="bg-black dark:bg-white !text-white dark:!text-black px-8 py-5 rounded-full font-bold uppercase tracking-wider text-sm hover:!text-black dark:hover:!text-white hover:bg-purple-600 dark:hover:bg-purple-600 transition-colors duration-300 flex items-center gap-2 shrink-0 group"
                     >
                         Start Your Project
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -82,7 +82,7 @@ export default function FooterSection() {
                                 <a
                                     key={social.name}
                                     href={social.href}
-                                    className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-purple-600 hover:!text-white transition-all duration-300"
+                                    className="w-10 h-10 rounded-full bg-gray-50 dark:bg-[#111] flex items-center justify-center text-gray-600 hover:bg-purple-600 hover:!text-white transition-all duration-300"
                                     aria-label={social.name}
                                 >
                                     <social.icon size={18} />
@@ -93,7 +93,7 @@ export default function FooterSection() {
 
                     {/* Quick Links */}
                     <div className="lg:col-span-2 lg:col-start-6 flex flex-col items-center md:items-start text-center md:text-left">
-                        <h4 className="font-bold text-gray-900 uppercase tracking-wider mb-6 text-sm">Quick Links</h4>
+                        <h4 className="font-bold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-6 text-sm">Quick Links</h4>
                         <ul className="space-y-4">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
@@ -107,7 +107,7 @@ export default function FooterSection() {
 
                     {/* Services */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-                        <h4 className="font-bold text-gray-900 uppercase tracking-wider mb-6 text-sm">Services</h4>
+                        <h4 className="font-bold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-6 text-sm">Services</h4>
                         <ul className="space-y-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 w-full">
                             {services.map((service, index) => (
                                 <li key={index} className="sm:mt-0 mt-0">
@@ -121,7 +121,7 @@ export default function FooterSection() {
                 </div>
 
                 {/* Bottom Footer */}
-                <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="pt-8 border-t border-gray-100 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-gray-400 font-light text-sm text-center md:text-left">
                         © 2026 Your Agency Name. All Rights Reserved.
                     </p>

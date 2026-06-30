@@ -30,11 +30,11 @@ export default function ContactSection() {
         });
     };
 
-    const inputClasses = "w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 md:py-4 text-black focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 font-light placeholder:text-gray-400";
-    const labelClasses = "block text-sm font-medium text-gray-700 mb-2 tracking-wide uppercase text-xs";
+    const inputClasses = "w-full bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-white/20 rounded-xl px-4 py-3 md:py-4 text-black dark:text-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 font-light placeholder:text-gray-400";
+    const labelClasses = "block text-sm font-medium text-gray-700 dark:text-[#cbd5e1] mb-2 tracking-wide uppercase text-xs";
 
     return (
-        <section id="contact" className="relative w-full bg-white text-black py-16 md:py-20">
+        <section id="contact" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] py-16 md:py-20">
             <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
                 {/* Section Header */}
                 <motion.div 
@@ -62,7 +62,7 @@ export default function ContactSection() {
                     viewport={{ once: true, margin: "-10%" }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_40px_rgb(0,0,0,0.04)] border border-gray-100">
+                    <div className="bg-white dark:bg-[#0a0a0a] rounded-3xl p-8 md:p-12 shadow-[0_8px_40px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-white/10">
                         <h3 className="text-2xl font-bold tracking-tight mb-8 uppercase text-center">Project Inquiry Form</h3>
                         
                         <AnimatePresence mode="wait">

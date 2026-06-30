@@ -18,10 +18,10 @@ export default function WhatsAppButton() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-white text-black px-3 py-2 rounded-xl shadow-lg border border-gray-100 text-sm font-medium tracking-wide whitespace-nowrap"
+                        className="bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] px-3 py-2 rounded-xl shadow-lg border border-gray-100 dark:border-white/10 text-sm font-medium tracking-wide whitespace-nowrap"
                     >
                         Need a Quick Follow-Up?
-                        <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-gray-100 transform rotate-45"></div>
+                        <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white dark:bg-[#0a0a0a] border-b border-r border-gray-100 dark:border-white/10 transform rotate-45"></div>
                     </motion.div>
                 )}
             </AnimatePresence>

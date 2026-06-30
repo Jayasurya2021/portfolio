@@ -127,12 +127,12 @@ export default function ServicesSection() {
                         <span className="text-sm font-bold tracking-widest text-purple-600 uppercase">Our Expertise</span>
                         <span className="w-12 h-[2px] bg-purple-600 rounded-full" />
                     </div>
-                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight pb-5">
+                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-[#f1f5f9] tracking-tight pb-5">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Services</span>
                     </h2>
                 </div>
 
-                <div className="overflow-hidden rounded-[36px] border border-black/10 bg-black/5 shadow-[0_10px_60px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl">
+                <div className="overflow-hidden rounded-[36px] border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shadow-[0_10px_60px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl">
                     <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                         <div className="relative min-h-[360px] overflow-hidden lg:min-h-[520px]">
                             <AnimatePresence mode="wait">
@@ -151,7 +151,7 @@ export default function ServicesSection() {
 
                             <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-8 lg:p-10">
                                 <div className="flex items-center gap-3">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/20 bg-black/10 backdrop-blur-sm">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-black/20 dark:border-white/20 bg-black/10 dark:bg-white/10 backdrop-blur-sm">
                                         {currentService.icon}
                                     </div>
                                     <div>
@@ -168,7 +168,7 @@ export default function ServicesSection() {
 
                         <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
                             <div>
-                                <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-black/45">
+                                <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-black/45 dark:text-white/45">
                                     Featured service
                                 </p>
                                 <AnimatePresence mode="wait">
@@ -180,10 +180,10 @@ export default function ServicesSection() {
                                         transition={{ duration: 0.35, ease: 'easeOut' }}
                                         className="mt-4"
                                     >
-                                        <h3 className="!text-4xl font-bold leading-tight text-black sm:text-3xl">
+                                        <h3 className="!text-4xl font-bold leading-tight text-black dark:text-[#f8fafc] sm:text-3xl">
                                             {currentService.title}
                                         </h3>
-                                        <p className="mt-4 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
+                                        <p className="mt-4 max-w-xl text-sm leading-relaxed text-black/70 dark:text-white/70 sm:text-base">
                                             {currentService.description}
                                         </p>
                                     </motion.div>
@@ -207,25 +207,26 @@ export default function ServicesSection() {
                                 </div> */}
                             </div>
 
-                            <div className="mt-8 flex items-center justify-between gap-4 border-t border-black/10 pt-6">
+                            <div className="mt-8 flex items-center justify-between gap-4 border-t border-black/10 dark:border-white/10 pt-6">
                                 <div className="flex items-center gap-10">
                                     <button
                                         type="button"
                                         onClick={goToPrev}
-                                        className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 bg-black/10 transition hover:bg-black/15"
+                                        className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 dark:border-white/15 bg-black/10 dark:bg-white/10 transition hover:bg-black/15 dark:hover:bg-white/15"
                                     >
-                                        <ArrowLeft size={18} className="text-black" />
+                                        <ArrowLeft size={18} className="text-black dark:text-[#f8fafc]" />
                                     </button>
                                     <button
                                         type="button"
                                         onClick={goToNext}
-                                        className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 bg-black/10 transition hover:bg-black/15"
+                                        className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 dark:border-white/15 bg-black/10 dark:bg-white/10 transition hover:bg-black/15 dark:hover:bg-white/15"
                                     >
-                                        <ArrowRight size={18} className="text-black" />
+                                        <ArrowRight size={18} className="text-black dark:text-[#f8fafc]" />
                                     </button>
                                 </div>
 
-                                <div className="text-sm text-black/60">
+                                <div className="text-sm text-black/60 dark:text-white/60">
+
                                     Swipe through the services and explore each.
                                 </div>
                             </div>

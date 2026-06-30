@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
 /* ============================================================
    :root — CSS Custom Properties (MUST be first, before all use)
    Premium White & Blue Theme
@@ -26,10 +28,35 @@
   --border-hover: rgba(126, 34, 206, 0.28);
   --glass-shadow: 0 10px 30px 0 rgba(15, 23, 42, 0.06), 0 1px 3px 0 rgba(0,0,0,0.02);
   --blue-glow: 0 10px 30px rgba(126, 34, 206, 0.12);
-
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', var(--font-sans);
+}
 
+.dark {
+  --bg-main: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: rgba(20, 20, 20, 0.75);
+  --bg-card-hover: rgba(30, 30, 30, 0.95);
+
+  --primary: #a855f7;
+  --primary-hover: #c084fc;
+  --accent: #d8b4fe;
+  --accent-light: #e9d5ff;
+  --accent-glow: rgba(168, 85, 247, 0.15);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-highlight: #d8b4fe;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5), 0 1px 3px 0 rgba(0,0,0,0.2);
+  --blue-glow: 0 10px 30px rgba(168, 85, 247, 0.15);
+  color-scheme: dark;
+}
+
+body {
   font-family: var(--font-sans);
   line-height: 1.6;
   font-weight: 400;
@@ -284,6 +311,15 @@ button {
   fill: black;
   z-index: 9;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dark .animated-button {
+  color: white;
+  box-shadow: 0 0 0 2px white;
+}
+
+.dark .animated-button svg {
+  fill: white;
 }
 
 .animated-button .arr-1 {

@@ -114,7 +114,7 @@ function StackedCard({ project, index, total }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="w-full max-w-9xl h-[90vh] md:h-[85vh] rounded-[25px] bg-white border border-gray-200 p-6 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
+                className="w-full max-w-9xl h-[90vh] md:h-[85vh] rounded-[25px] bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/20 p-6 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
             >
                 {/* ── HEADER ── */}
                 <div className="flex justify-between items-start mb-6 md:mb-8 w-full shrink-0">
@@ -125,13 +125,13 @@ function StackedCard({ project, index, total }) {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                            className="text-6xl md:text-6xl font-black text-gray-900 tracking-tighter leading-none"
+                            className="text-6xl md:text-6xl font-black text-gray-900 dark:text-[#f1f5f9] tracking-tighter leading-none"
                         >
                             0{index + 1}
                         </motion.h2>
                         {/* Subtitle & Title */}
                         <div className="flex flex-col justify-center gap-1 mt-1">
-                            <h3 className="text-xl md:text-3xl font-black text-gray-900 uppercase tracking-wider">
+                            <h3 className="text-xl md:text-3xl font-black text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider">
                                 {project.title}
                             </h3>
                             <span className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-widest">
@@ -143,17 +143,17 @@ function StackedCard({ project, index, total }) {
                     {/* Live Project Button */}
                     <a
                         href={project.demo}
-                        className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 text-black font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:!text-white hover:border-gray-900 transition-all duration-300 transform group-hover:scale-105"
+                        className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 dark:border-white/20 text-black dark:text-[#f8fafc] font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:!text-white hover:border-gray-900 transition-all duration-300 transform group-hover:scale-105"
                     >
                         Live Project
                     </a>
                 </div>
 
                 {/* ── INNER CONTENT AREA ── */}
-                <div className="relative flex-1 w-full bg-gray-50 rounded-[20px] border border-gray-100 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
+                <div className="relative flex-1 w-full bg-gray-50 dark:bg-[#111] rounded-[20px] border border-gray-100 dark:border-white/10 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className="w-full p-6 md:p-8 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50" style={{ flex: '1 1 40%' }}>
+                    <div className="w-full p-6 md:p-8 flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50 dark:bg-[#111]" style={{ flex: '1 1 40%' }}>
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -177,7 +177,7 @@ function StackedCard({ project, index, total }) {
                                                 viewport={{ once: true }}
                                                 transition={{ duration: 0.4, delay: 0.4 + (i * 0.1) }}
                                                 key={t}
-                                                className="px-4 py-2 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-700 shadow-sm transition-colors hover:border-gray-300"
+                                                className="px-4 py-2 bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/20 rounded-full text-xs font-bold text-gray-700 dark:text-[#cbd5e1] shadow-sm transition-colors hover:border-gray-300"
                                             >
                                                 {t}
                                             </motion.span>
@@ -189,7 +189,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className="w-full relative overflow-hidden bg-gray-200 shrink-0" style={{ flex: '0 0 60%' }}>
+                    <div className="w-full relative overflow-hidden bg-gray-200 dark:bg-[#222] shrink-0" style={{ flex: '0 0 60%' }}>
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
@@ -220,7 +220,7 @@ export default function ProjectsSection() {
     return (
         <section
             id="projects"
-            className="relative w-full bg-white pt-24 pb-0"
+            className="relative w-full bg-white dark:bg-[#0a0a0a] pt-15 pb-0"
         >
 
             {/* Animated Background Gradients (Light Theme) */}
@@ -242,7 +242,7 @@ export default function ProjectsSection() {
                         <span className="text-sm font-bold tracking-widest text-purple-600 uppercase">Selected Works</span>
                         <span className="w-12 h-[2px] bg-purple-600 rounded-full" />
                     </div>
-                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight pb-5">
+                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-[#f1f5f9] tracking-tight pb-5">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Creations</span>
                     </h2>
                 </motion.div>
