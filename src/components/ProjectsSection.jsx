@@ -22,7 +22,7 @@ const projects = [
         demo: '#',
         repo: '#',
         textAccent: 'text-[#7e22ce]',
-        bgAccent: 'bg-[#7e22ce]',
+        // bgAccent: 'bg-[#7e22ce]',
         shadowAccent: 'shadow-[#7e22ce]/30',
         glowAccent: 'shadow-[inset_0_0_0_2px_rgba(126,34,206,0.3),_0_0_40px_rgba(126,34,206,0.15)]',
     },
@@ -42,7 +42,7 @@ const projects = [
         demo: '#',
         repo: '#',
         textAccent: 'text-[#0284c7]',
-        bgAccent: 'bg-[#0284c7]',
+        // bgAccent: 'bg-[#0284c7]',
         shadowAccent: 'shadow-[#0284c7]/30',
         glowAccent: 'shadow-[inset_0_0_0_2px_rgba(2,132,199,0.3),_0_0_40px_rgba(2,132,199,0.15)]',
     },
@@ -62,7 +62,7 @@ const projects = [
         demo: '#',
         repo: '#',
         textAccent: 'text-[#059669]',
-        bgAccent: 'bg-[#059669]',
+        // bgAccent: 'bg-[#059669]',
         shadowAccent: 'shadow-[#059669]/30',
         glowAccent: 'shadow-[inset_0_0_0_2px_rgba(5,150,105,0.3),_0_0_40px_rgba(5,150,105,0.15)]',
     },
@@ -82,7 +82,7 @@ const projects = [
         demo: '#',
         repo: '#',
         textAccent: 'text-[#e11d48]',
-        bgAccent: 'bg-[#e11d48]',
+        // bgAccent: 'bg-[#e11d48]',
         shadowAccent: 'shadow-[#e11d48]/30',
         glowAccent: 'shadow-[inset_0_0_0_2px_rgba(225,29,72,0.3),_0_0_40px_rgba(225,29,72,0.15)]',
     },
@@ -220,7 +220,7 @@ export default function ProjectsSection() {
     return (
         <section
             id="projects"
-            className="relative w-full bg-white pt-32 pb-0"
+            className="relative w-full bg-white pt-24 pb-0"
         >
 
             {/* Animated Background Gradients (Light Theme) */}
@@ -242,7 +242,7 @@ export default function ProjectsSection() {
                         <span className="text-sm font-bold tracking-widest text-purple-600 uppercase">Selected Works</span>
                         <span className="w-12 h-[2px] bg-purple-600 rounded-full" />
                     </div>
-                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight">
+                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight pb-5">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Creations</span>
                     </h2>
                 </motion.div>

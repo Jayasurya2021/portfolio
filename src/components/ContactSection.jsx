@@ -34,7 +34,7 @@ export default function ContactSection() {
     const labelClasses = "block text-sm font-medium text-gray-700 mb-2 tracking-wide uppercase text-xs";
 
     return (
-        <section id="contact" className="relative w-full bg-white text-black py-24 md:py-32">
+        <section id="contact" className="relative w-full bg-white text-black py-16 md:py-20">
             <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
                 {/* Section Header */}
                 <motion.div 

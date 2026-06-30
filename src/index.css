@@ -4,6 +4,7 @@
    :root — CSS Custom Properties (MUST be first, before all use)
    Premium White & Blue Theme
    ============================================================ */
+
 :root {
   --bg-main: #ffffff;
   --bg-secondary: #f8fafc;
@@ -272,7 +273,7 @@ button {
   font-weight: 600;
   color: black;
   box-shadow: 0 0 0 2px black;
-  cursor: pointer;
+  cursor: none;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }

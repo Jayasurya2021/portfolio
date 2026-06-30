@@ -14,7 +14,7 @@ export default function FooterSection() {
         { name: 'Services', href: '#services' },
         { name: 'Projects', href: '#projects' },
         { name: 'About', href: '#about' },
-        { name: 'Testimonials', href: '#reviews' },
+        // { name: 'Testimonials', href: '#reviews' },
         { name: 'Contact', href: '#contact' },
     ];
 
@@ -36,8 +36,8 @@ export default function FooterSection() {
     ];
 
     return (
-        <footer className="bg-white text-black pt-20 md:pt-32 pb-8 border-t border-gray-100">
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1600px]">
+        <footer className="bg-white text-black pt-20 md:pt-20 pb-8 border-t border-gray-100">
+            <div className="container mx-auto px-4 lg:px-12 max-w-[1600px]">
 
                 {/* CTA Section */}
                 <motion.div
@@ -67,7 +67,7 @@ export default function FooterSection() {
                 </motion.div>
 
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 py-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 py-8">
 
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
