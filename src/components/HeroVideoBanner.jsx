@@ -1,102 +1,48 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
 
 export default function HeroVideoBanner() {
-    // Premium, stable stock video from Mixkit (Modern City Skyscrapers)
-    const VIDEO_URL = "https://videos.pexels.com/video-files/3255275/3255275-hd_1920_1080_25fps.mp4";
+    const handleScroll = (e, targetId) => {
+        e.preventDefault();
+        const target = document.querySelector(targetId);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-black" id="hero">
-            {/* Background Video */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-60"
-            >
-                <source src={VIDEO_URL} type="video/mp4" />
-            </video>
-
-            {/* Dark Overlay Gradient for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-[#0A0A0A]" />
-
-            {/* Main Content */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-                    className="flex items-center gap-3 mb-6"
-                >
-                    <span className="w-12 h-[2px] bg-purple-500 rounded-full" />
-                    <span className="text-sm font-bold tracking-[0.4em] text-white uppercase">
-                        Visionary Architecture
-                    </span>
-                    <span className="w-12 h-[2px] bg-purple-500 rounded-full" />
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                    className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-2xl mb-8"
-                >
-                    ENGINEERING
-                    <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-600">
-                        LEGACIES
-                    </span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.9 }}
-                    className="max-w-2xl text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-12 drop-shadow-md"
-                >
-                    Merging architectural brilliance with next-generation technology to shape tomorrow's urban skylines.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 1.2, type: 'spring' }}
-                >
-                    <a
-                        href="#projects"
-                        className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-white/10 border border-white/20 rounded-full backdrop-blur-md hover:bg-white hover:text-black hover:border-white shadow-[0_0_40px_rgba(168,85,247,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)]"
-                    >
-                        Explore Our Work
-                    </a>
-                </motion.div>
-
+        <section className="lg:pt-30 lg:pb-20 pt-20 pb-10" id="hero">
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-3xl text-center mx-auto">
+                    <h1 className="text-5xl lg:text-7xl font-normal -tracking-[2.88px] mb-4 text-black dark:text-white"
+                        style={{ opacity: '1', transform: 'none' }}>We Build <span className="italic"> Digital Products </span>
+                        That Drive Growth.</h1>
+                    <p className="mb-8 lg:mb-12 text-gray-700 dark:text-gray-300 text-lg leading-6 -tracking-[0.2px] max-w-xl mx-auto"
+                        style={{ opacity: '1', transform: 'none' }}>From startups to global brands — we design, develop,
+                        and deliver high-performing web and mobile solutions that turn ideas into impact.</p>
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-5"
+                        style={{ opacity: '1', transform: 'none' }}><a
+                            className="group px-6 py-4.5 flex gap-2 items-center bg-black text-sm font-medium -tracking-[0.2px] leading-5 text-white rounded-full hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white transition-all duration-300 shadow-sm border border-gray-200 dark:border-white/10"
+                            href="#projects" onClick={(e) => handleScroll(e, '#projects')} data-discover="true"><span
+                                className="relative inline-block overflow-hidden text-white dark:text-black"><span
+                                    className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">EXPLORE
+                                    PROJECTS</span><span
+                                        className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">EXPLORE
+                                    PROJECTS</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none"
+                                        className="transition-transform duration-300 group-hover:translate-x-1 text-white dark:text-black">
+                                <path
+                                    d="M17.9941 5.25293C18.0771 5.253 18.1559 5.26997 18.2305 5.29492C18.2472 5.30045 18.2648 5.30381 18.2812 5.31055C18.3311 5.33127 18.3781 5.35722 18.4219 5.3877C18.4586 5.41309 18.4937 5.44192 18.5264 5.47461C18.6455 5.59379 18.7132 5.74352 18.7354 5.89844C18.7383 5.91968 18.7401 5.94112 18.7412 5.96289C18.7424 5.98346 18.7447 6.00382 18.7441 6.02441L18.7471 14.9941C18.747 15.4081 18.4103 15.744 17.9961 15.7441C17.5822 15.7438 17.2462 15.408 17.2461 14.9941L17.2441 7.81641L6.53027 18.5312C6.23737 18.824 5.76257 18.8241 5.46973 18.5312C5.1769 18.2384 5.17698 17.7636 5.46973 17.4707L16.1885 6.75098L8.99805 6.75C8.58403 6.74971 8.24816 6.41381 8.24805 6C8.24822 5.5859 8.58474 5.24985 8.99902 5.25L17.9941 5.25293Z"
+                                    fill="currentColor" />
+                            </svg></a><a
+                                className="group px-6 py-4.5 flex gap-2 items-center bg-white border border-black text-sm font-medium -tracking-[0.2px] leading-5 text-black rounded-full hover:bg-gray-100 dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10 transition-all duration-300"
+                                href="#contact" onClick={(e) => handleScroll(e, '#contact')} data-discover="true"><span
+                                    className="relative inline-block overflow-hidden "><span
+                                        className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">CONTACT
+                                    US</span><span
+                                        className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">CONTACT
+                                    US</span></span></a></div>
+                </div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 2 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-            >
-                <span className="text-white/50 text-xs font-semibold tracking-[0.2em] uppercase">Scroll</span>
-                <motion.div
-                    animate={{ y: [0, 8, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="w-8 h-12 rounded-full border border-white/30 flex items-start justify-center p-2 backdrop-blur-sm"
-                >
-                    <motion.div
-                        animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                        <ArrowDown size={14} className="text-purple-400" />
-                    </motion.div>
-                </motion.div>
-            </motion.div>
-
         </section>
     );
 }

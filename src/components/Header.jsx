@@ -32,10 +32,19 @@ const TimeDisplay = ({ timeZone, locale = "en-GB" }) => {
 };
 
 const NavItem = ({ href, icon: Icon, label, selected }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <a
       href={href}
-      className={`relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selected ? "text-purple-600 dark:text-purple-400" : "!text-black hover:text-black/70 dark:text-gray-300 dark:hover:text-white"
+      onClick={handleClick}
+      className={`relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${selected ? "text-purple-600 dark:text-purple-400" : "text-black hover:text-black/70 dark:text-gray-300 dark:hover:text-white"
         }`}
     >
       {selected && (

@@ -7,7 +7,6 @@ import {
     ChevronLeft
 } from 'lucide-react'
 import '../App.css'
-import { SmoothCursor } from './ui/smooth-cursor'
 import HeroVideoBanner from './HeroVideoBanner'
 import ProjectsSection from './ProjectsSection';
 import AboutSection from './AboutSection';
@@ -224,10 +223,7 @@ function MainPage() {
     ]
 
     return (
-        <div className="app-container cursor-none">
-            <SmoothCursor />
-
-
+        <div className="app-container">
 
             {/* ── SLIDE BAR (replaces banner + hero) ── */}
             <HeroVideoBanner />
