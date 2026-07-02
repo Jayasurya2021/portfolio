@@ -94,7 +94,7 @@ export default function ServicesSection() {
     const goToPrev = () => setActiveService((prev) => (prev - 1 + totalSlides) % totalSlides)
 
     return (
-        <section id="services" className="relative overflow-hidden scroll-mt-24">
+        <section id="services" className="relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <motion.div
                     animate={{ scale: [1, 1.12, 1], opacity: [0.2, 0.35, 0.2] }}
@@ -127,14 +127,14 @@ export default function ServicesSection() {
                         <span className="text-sm font-bold tracking-widest text-purple-600 uppercase">Our Expertise</span>
                         <span className="w-12 h-[2px] bg-purple-600 rounded-full" />
                     </div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-[#f1f5f9] tracking-tight pb-5">
+                    <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-[#f1f5f9] tracking-tight pb-5">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Services</span>
                     </h2>
                 </div>
 
-                <div className="overflow-hidden rounded-[24px] lg:rounded-[36px] border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shadow-[0_10px_60px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl">
+                <div className="overflow-hidden rounded-[36px] border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 shadow-[0_10px_60px_-20px_rgba(0,0,0,0.85)] backdrop-blur-xl">
                     <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-                        <div className="relative min-h-[250px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden">
+                        <div className="relative min-h-[360px] overflow-hidden lg:min-h-[520px]">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={currentService.id}
@@ -180,10 +180,10 @@ export default function ServicesSection() {
                                         transition={{ duration: 0.35, ease: 'easeOut' }}
                                         className="mt-4"
                                     >
-                                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-black dark:text-[#f8fafc]">
+                                        <h3 className="!text-4xl font-bold leading-tight text-black dark:text-[#f8fafc] sm:text-3xl">
                                             {currentService.title}
                                         </h3>
-                                        <p className="mt-3 lg:mt-4 max-w-xl text-sm leading-relaxed text-black/70 dark:text-white/70 sm:text-base">
+                                        <p className="mt-4 max-w-xl text-sm leading-relaxed text-black/70 dark:text-white/70 sm:text-base">
                                             {currentService.description}
                                         </p>
                                     </motion.div>

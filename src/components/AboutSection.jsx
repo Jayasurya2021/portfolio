@@ -31,7 +31,7 @@ export default function AboutSection() {
     const scaleY = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
     return (
-        <section ref={containerRef} id="about" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-white py-20 md:py-40 lg:py-64 overflow-hidden scroll-mt-24">
+        <section ref={containerRef} id="about" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-white py-20 md:py-40 lg:py-64 overflow-hidden">
 
             {/* Center Timeline Background Line */}
             <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-black/10 dark:bg-white/10 -translate-x-1/2 z-0 hidden md:block" />

@@ -10,10 +10,10 @@ export default function HeroVideoBanner() {
     };
 
     return (
-        <section className="pt-32 pb-16 lg:pt-48 lg:pb-24 scroll-mt-24" id="hero">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <section className="lg:pt-25 lg:pb-25 pt-25 pb-10" id="hero">
+            <div className="max-w-7xl mx-auto px-6">
                 <div className="max-w-3xl text-center mx-auto">
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-normal -tracking-[1px] lg:-tracking-[2.88px] mb-6 text-black dark:text-white"
+                    <h1 className="text-5xl lg:text-7xl font-normal -tracking-[2.88px] mb-4 text-black dark:text-white"
                         style={{ opacity: '1', transform: 'none' }}>We Build <span className="italic"> Digital Products </span>
                         That Drive Growth.</h1>
                     <p className="mb-8 lg:mb-12 text-gray-700 dark:text-gray-300 text-lg leading-6 -tracking-[0.2px] max-w-xl mx-auto"
