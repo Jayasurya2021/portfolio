@@ -10,10 +10,10 @@ export default function HeroVideoBanner() {
     };
 
     return (
-        <section className="pt-16 sm:pt-20 md:pt-24 lg:pt-20 xl:pt-16 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
+        <section className="pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 2xl:pt-40 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
                 <div className="max-w-3xl text-center mx-auto w-full">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] mb-4 text-black dark:text-white break-words"
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] mb-4 text-black dark:text-white break-words"
                         style={{ opacity: '1', transform: 'none' }}>We Build <span className="italic"> Digital Products </span>
                         That Drive Growth.</h1>
                     <p className="mb-8 lg:mb-12 text-gray-700 dark:text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed md:leading-6 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto break-words"
