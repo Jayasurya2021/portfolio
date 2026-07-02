@@ -30,11 +30,11 @@ export default function ContactSection() {
         });
     };
 
-    const inputClasses = "w-full bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-white/20 rounded-xl px-4 py-3 md:py-4 text-black dark:text-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 font-light placeholder:text-gray-400";
+    const inputClasses = "w-full bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-white/20 rounded-xl px-4 py-3 md:py-4 text-black dark:text-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 font-light placeholder:text-gray-400 min-h-[48px]";
     const labelClasses = "block text-sm font-medium text-gray-700 dark:text-[#cbd5e1] mb-2 tracking-wide uppercase text-xs";
 
     return (
-        <section id="contact" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] py-16 md:py-20">
+        <section id="contact" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] py-16 md:py-20 scroll-mt-24">
             <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
                 {/* Section Header */}
                 <motion.div 
