@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, Compass, Droplets, Flame, Sparkles, Trees } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Layout, Database, Layers, Code2, Link, Cloud, Wrench } from 'lucide-react'
 import GradualBlur from './Animation/GradualBlur'
 
 const importAll = (r) =>
@@ -24,7 +24,7 @@ const services = [
         description: 'Modern, responsive, and polished frontends built with React, Tailwind, and thoughtful interaction design.',
         image: getServiceImage('frontend'),
         accentColor: '#8b5cf6',
-        icon: <Sparkles size={18} className="text-white" />,
+        icon: <Layout size={18} className="text-white" />,
     },
     {
         id: '02',
@@ -32,7 +32,7 @@ const services = [
         description: 'Scalable APIs, secure auth systems, databases, and solid server architecture for modern products.',
         image: getServiceImage('backend'),
         accentColor: '#2563eb',
-        icon: <Flame size={18} className="text-white" />,
+        icon: <Database size={18} className="text-white" />,
     },
     {
         id: '03',
@@ -40,7 +40,7 @@ const services = [
         description: 'End-to-end web applications powered by MongoDB, Express, React, and Node.js.',
         image: getServiceImage('mern'),
         accentColor: '#059669',
-        icon: <Compass size={18} className="text-white" />,
+        icon: <Layers size={18} className="text-white" />,
     },
     {
         id: '04',
@@ -48,7 +48,7 @@ const services = [
         description: 'Secure and maintainable Django builds with admin tools, business logic, and smooth deployment.',
         image: getServiceImage('django'),
         accentColor: '#16a34a',
-        icon: <Trees size={18} className="text-white" />,
+        icon: <Code2 size={18} className="text-white" />,
     },
     {
         id: '05',
@@ -56,7 +56,7 @@ const services = [
         description: 'Seamless integrations for payments, WhatsApp, email, authentication, and third-party platforms.',
         image: getServiceImage('apiimage'),
         accentColor: '#ea580c',
-        icon: <Droplets size={18} className="text-white" />,
+        icon: <Link size={18} className="text-white" />,
     },
     {
         id: '06',
@@ -64,7 +64,7 @@ const services = [
         description: 'Reliable deployment workflows, performance tuning, and scalable hosting setups for live products.',
         image: getServiceImage('host'),
         accentColor: '#ea580c',
-        icon: <Droplets size={18} className="text-white" />,
+        icon: <Cloud size={18} className="text-white" />,
     },
     {
         id: '07',
@@ -72,7 +72,7 @@ const services = [
         description: 'Ongoing updates, monitoring, and support to keep your application stable and growing.',
         image: getServiceImage('support'),
         accentColor: '#f59e0b',
-        icon: <Sparkles size={18} className="text-white" />,
+        icon: <Wrench size={18} className="text-white" />,
     },
 ]
 

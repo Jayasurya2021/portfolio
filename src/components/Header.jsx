@@ -84,11 +84,40 @@ export const Header = () => {
     };
   }, []);
 
+  // Subscribe to theme changes to force a re-render for the boxShadow
+  const [isDark, setIsDark] = useState(
+    typeof window !== 'undefined' ? document.documentElement.classList.contains('dark') : true
+  );
+
+  useEffect(() => {
+    const handleThemeChange = () => setIsDark(document.documentElement.classList.contains('dark'));
+    window.addEventListener('themechange', handleThemeChange);
+    return () => window.removeEventListener('themechange', handleThemeChange);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-center px-8 pointer-events-none">
+    <motion.header 
+      className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-center px-8 pointer-events-none"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
+    >
 
       {/* Center Nav Pill */}
-      <div className="flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10 shadow-2xl">
+      <motion.div 
+        id="header-nav-pill"
+        className="flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10"
+        animate={{
+            boxShadow: isDark 
+                ? '0 10px 50px rgba(255,255,255,.08), inset 0 1px 1px rgba(255,245,220,0.25)' 
+                : '0 10px 35px rgba(0,0,0,.08), inset 0 1px 1px rgba(255,214,120,0.4)'
+        }}
+        transition={{ duration: 0.6 }}
+        style={{
+            // Fallback for initial render before JS runs or animate kicks in
+            boxShadow: 'var(--header-shadow, 0 10px 35px rgba(0,0,0,.08))'
+        }}
+      >
 
         <NavItem href="#hero" icon={Home} label="Home" selected={activeSection === "#hero"} />
 
@@ -113,8 +142,8 @@ export const Header = () => {
             </button>
           </>
         )}
-      </div>
-    </header>
+      </motion.div>
+    </motion.header>
   );
 };
 
