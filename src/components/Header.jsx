@@ -1,7 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Home, User, Grid, Layers, Mail, Moon, Sun } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Home, User, Grid, Layers, Mail, Moon, Sun, MoreHorizontal, X } from "lucide-react";
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import styles from "./Header.module.scss";
 
@@ -60,9 +60,33 @@ const NavItem = ({ href, icon: Icon, label, selected }) => {
   );
 };
 
+const MobileNavItem = ({ href, icon: Icon, label, selected, onClick }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    onClick();
+  };
+
+  return (
+    <a
+      href={href}
+      onClick={handleClick}
+      className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${selected ? "bg-white dark:bg-white/10 text-purple-600 dark:text-purple-400 shadow-sm" : "text-black hover:bg-black/5 dark:text-gray-300 dark:hover:bg-white/5 dark:hover:text-white"
+        }`}
+    >
+      <Icon size={18} />
+      <span>{label}</span>
+    </a>
+  );
+};
+
 export const Header = () => {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState(location.hash || "#hero");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,7 +121,7 @@ export const Header = () => {
 
   return (
     <motion.header 
-      className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-center px-8 pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-end md:justify-center px-6 md:px-8 pointer-events-none"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
@@ -106,7 +130,7 @@ export const Header = () => {
       {/* Center Nav Pill */}
       <motion.div 
         id="header-nav-pill"
-        className="flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10"
+        className="relative flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10"
         animate={{
             boxShadow: isDark 
                 ? '0 10px 50px rgba(255,255,255,.08), inset 0 1px 1px rgba(255,245,220,0.25)' 
@@ -119,29 +143,61 @@ export const Header = () => {
         }}
       >
 
-        <NavItem href="#hero" icon={Home} label="Home" selected={activeSection === "#hero"} />
-
-        <NavItem href="#services" icon={Layers} label="Services" selected={activeSection === "#services"} />
-        <NavItem href="#projects" icon={Grid} label="Projects" selected={activeSection === "#projects"} />
-        <NavItem href="#about" icon={User} label="About" selected={activeSection === "#about"} />
-        <NavItem href="#contact" icon={Mail} label="Contact" selected={activeSection === "#contact"} />
+        {/* Desktop Nav */}
+        <div className="hidden sm:flex items-center">
+            <NavItem href="#hero" icon={Home} label="Home" selected={activeSection === "#hero"} />
+            <NavItem href="#services" icon={Layers} label="Services" selected={activeSection === "#services"} />
+            <NavItem href="#projects" icon={Grid} label="Projects" selected={activeSection === "#projects"} />
+            <NavItem href="#about" icon={User} label="About" selected={activeSection === "#about"} />
+            <NavItem href="#contact" icon={Mail} label="Contact" selected={activeSection === "#contact"} />
+        </div>
 
         {display.themeSwitcher && (
           <>
-            <div className="w-[1px] h-6 bg-black/20 dark:bg-white/10 mx-1" />
+            <div className="hidden sm:block w-[1px] h-6 bg-black/20 dark:bg-white/10 mx-1" />
             <button
               onClick={() => {
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                // Force a re-render to update the icon
                 window.dispatchEvent(new Event('themechange'));
               }}
               className="p-2.5 rounded-full text-black hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 hover:bg-black/5 dark:hover:bg-white/5 transition-all"
             >
               <ThemeIcon />
             </button>
+            <div className="sm:hidden w-[1px] h-6 bg-black/20 dark:bg-white/10 mx-1" />
           </>
         )}
+
+        {/* Mobile Nav Button */}
+        <div className="sm:hidden flex items-center">
+            <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+                className={`p-2.5 rounded-full transition-all flex items-center justify-center ${isMobileMenuOpen ? 'bg-white shadow-sm dark:bg-white/10 text-purple-600 dark:text-purple-400' : 'text-black hover:bg-black/5 dark:text-gray-400 dark:hover:bg-white/5'}`}
+            >
+                {isMobileMenuOpen ? <X size={18} /> : <MoreHorizontal size={18} />}
+            </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
+            {isMobileMenuOpen && (
+                <motion.div
+                    initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-[120%] right-0 min-w-[200px] bg-white/90 dark:bg-[#111]/90 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-2xl p-2 flex flex-col gap-1 sm:hidden shadow-xl"
+                >
+                    <MobileNavItem href="#hero" icon={Home} label="Home" selected={activeSection === "#hero"} onClick={() => setIsMobileMenuOpen(false)} />
+                    <MobileNavItem href="#services" icon={Layers} label="Services" selected={activeSection === "#services"} onClick={() => setIsMobileMenuOpen(false)} />
+                    <MobileNavItem href="#projects" icon={Grid} label="Projects" selected={activeSection === "#projects"} onClick={() => setIsMobileMenuOpen(false)} />
+                    <MobileNavItem href="#about" icon={User} label="About" selected={activeSection === "#about"} onClick={() => setIsMobileMenuOpen(false)} />
+                    <MobileNavItem href="#contact" icon={Mail} label="Contact" selected={activeSection === "#contact"} onClick={() => setIsMobileMenuOpen(false)} />
+                </motion.div>
+            )}
+        </AnimatePresence>
+
       </motion.div>
     </motion.header>
   );

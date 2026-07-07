@@ -11,7 +11,7 @@ export default function HeroVideoBanner() {
     };
 
     return (
-        <section className="relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 2xl:pt-40 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
+        <section className="relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48 2xl:pt-56 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
             <style>{`
                 .hero-reflection-overlay {
                     background-image: linear-gradient(to bottom, rgba(255, 244, 220, 0.06) 0%, rgba(255, 244, 220, 0.03) 8%, rgba(255, 244, 220, 0.01) 12%, transparent 15%);

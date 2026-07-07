@@ -208,10 +208,13 @@ export default function ServicesSection() {
     return (
         <section id="services" className="relative py-24 overflow-hidden bg-white dark:bg-[#050505]">
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                <div className="inline-flex items-center gap-3 mb-10 md:mb-16 pl-4 md:pl-0">
-                    <span className="w-12 h-[2px] bg-[#9333ea] rounded-full" />
-                    <span className="text-sm font-bold tracking-widest text-[#9333ea] uppercase">Our Expertise</span>
-                    <span className="w-12 h-[2px] bg-[#9333ea] rounded-full" />
+                <div className="flex flex-col mb-12 md:mb-20 pl-4 md:pl-0 gap-3 md:gap-4">
+                    <span className="text-base md:text-lg text-[#9333ea] font-medium tracking-wide">
+                        {'{'} Our Services {'}'}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold uppercase text-gray-900 dark:text-white leading-[1.1] tracking-tight">
+                        EXPLORE WHAT WE CAN DO FOR YOU
+                    </h2>
                 </div>
 
                 <div className="border-t border-gray-200 dark:border-white/10 flex flex-col">
