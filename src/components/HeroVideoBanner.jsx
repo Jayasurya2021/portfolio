@@ -11,7 +11,7 @@ export default function HeroVideoBanner() {
     };
 
     return (
-        <section className="relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44 xl:pt-48 2xl:pt-56 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
+        <section className="relative z-10 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-10 sm:pb-14 md:pb-16 lg:pb-20 overflow-hidden w-full" id="hero">
             <style>{`
                 .hero-reflection-overlay {
                     background-image: linear-gradient(to bottom, rgba(255, 244, 220, 0.06) 0%, rgba(255, 244, 220, 0.03) 8%, rgba(255, 244, 220, 0.01) 12%, transparent 15%);
@@ -24,8 +24,8 @@ export default function HeroVideoBanner() {
                     background-image: linear-gradient(to bottom, rgba(255, 244, 220, 0.12) 0%, rgba(255, 244, 220, 0.07) 8%, rgba(255, 244, 220, 0.02) 15%, transparent 20%);
                 }
             `}</style>
-            <div className="max-w-full mx-auto sm:px-6 md:px-8 w-full">
-                <div className="max-w-full xl:max-w-4xl 2xl:max-w-6xl text-center mx-auto w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+                <div className="text-center mx-auto w-full">
                     <div className="relative mb-4">
                         <motion.h1
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] hero-text-illumination break-words"
