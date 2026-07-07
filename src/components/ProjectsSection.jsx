@@ -115,7 +115,7 @@ function StackedCard({ project, index, total }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="w-full max-w-9xl h-[70vh] md:h-[80vh] min-h-[500px] rounded-[25px] bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/20 p-6 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
+                className="w-full max-w-9xl h-[70vh] md:h-[80vh] min-h-[500px] rounded-[25px] bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/20 p-4 md:p-10 flex flex-col group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)]"
             >
                 {/* ── HEADER ── */}
                 <div className="flex justify-between items-start mb-6 md:mb-8 w-full shrink-0">
@@ -156,8 +156,8 @@ function StackedCard({ project, index, total }) {
                 <div className="relative flex-1 w-full bg-gray-50 dark:bg-[#111] rounded-[20px] border border-gray-100 dark:border-white/10 overflow-hidden flex flex-col-reverse md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-6 opacity-100 max-h-[1000px] flex-[1_1_100%]' : 'p-0 opacity-0 max-h-0 flex-[0_0_0%]'} md:!p-8 md:!opacity-100 md:!max-h-[1000px] md:!max-w-[1000px] md:!flex-[1_1_40%]`}>
-                        <div className="w-full min-w-[250px]">
+                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-5 opacity-100 max-h-[1000px] flex-[1_1_100%]' : 'p-0 opacity-0 max-h-0 flex-[0_0_0%]'} md:!p-8 md:!opacity-100 md:!max-h-[1000px] md:!max-w-[1000px] md:!flex-[1_1_40%]`}>
+                        <div className="w-full">
                             <p className="text-gray-600 dark:text-gray-300 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
                                 {project.description}
                             </p>
