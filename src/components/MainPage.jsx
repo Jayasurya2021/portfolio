@@ -15,7 +15,7 @@ import ContactSection from './ContactSection';
 import ContactInfoArea from './ContactInfoArea';
 import FooterSection from './FooterSection';
 import WhatsAppButton from './WhatsAppButton';
-import { WallWasherLight } from './WallWasherLight';
+
 
 /* ─────────────────────────────────────────────
    SLIDE BAR COMPONENT (replaces building banner)
@@ -225,8 +225,6 @@ function MainPage() {
 
     return (
         <div className="app-container relative">
-            {/* ── WALL WASHER LIGHT ── */}
-            <WallWasherLight />
 
             {/* ── SLIDE BAR (replaces banner + hero) ── */}
             <HeroVideoBanner />

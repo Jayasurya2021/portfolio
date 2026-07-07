@@ -15,7 +15,7 @@ const aboutBlocks = [
     },
     {
         id: "03",
-        title: "TECHNOLOGIES",
+        title: "Tech Stack",
         desc: "We leverage modern technologies including React, Node.js, Express.js, Django, MongoDB, Tailwind CSS, and cloud deployment platforms to create fast, secure, and future-ready digital products."
     }
 ];
@@ -91,7 +91,7 @@ export default function AboutSection() {
                             </div>
 
                             {/* Desktop Layout: Left Side Container */}
-                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-end text-center md:text-right md:pr-24 lg:pr-32">
+                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-end text-center md:text-right md:pr-6 lg:pr-8">
                                 {isEven ? (
                                     /* TITLE on Left */
                                     <div className="w-full flex justify-center md:justify-end">
@@ -102,9 +102,9 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[2.5rem] md:text-[4rem] lg:text-[5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
+                                            textClassName="text-[2.5rem] md:!text-[5rem] lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
                                         >
-                                            {block.title}
+                                            {block.title.toUpperCase()}
                                         </ScrollFloat>
                                     </div>
                                 ) : (
@@ -124,7 +124,7 @@ export default function AboutSection() {
                             </div>
 
                             {/* Desktop Layout: Right Side Container */}
-                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-start text-center md:text-left md:pl-24 lg:pl-32">
+                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-start text-center md:text-left md:pl-6 lg:pl-8">
                                 {isEven ? (
                                     /* DESCRIPTION on Right */
                                     <motion.div
@@ -148,7 +148,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[3.5rem] md:text-[5rem] lg:text-[7.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
+                                            textClassName="text-[3.5rem] md:!text-[5rem] !lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
                                         >
                                             {block.title}
                                         </ScrollFloat>
