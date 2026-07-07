@@ -42,13 +42,13 @@ export default function AboutSection() {
                 style={{ scaleY }}
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1600px] relative z-10 flex flex-col gap-16 sm:gap-32 md:gap-48 lg:gap-[300px]">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1600px] relative z-10 grid grid-cols-1 gap-16 sm:gap-32 md:gap-48 lg:gap-[300px]">
 
                 {aboutBlocks.map((block, index) => {
                     const isEven = index % 2 === 0;
 
                     return (
-                        <div key={block.id} className="relative flex flex-col md:flex-row items-center justify-between w-full">
+                        <div key={block.id} className="relative grid grid-cols-1 md:grid-cols-2 items-center w-full">
 
                             {/* Timeline Dot (Center) */}
                             <motion.div
@@ -91,10 +91,10 @@ export default function AboutSection() {
                             </div>
 
                             {/* Desktop Layout: Left Side Container */}
-                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-end text-center md:text-right md:pr-6 lg:pr-8">
+                            <div className="hidden md:flex w-full flex-col justify-center items-center text-center md:pr-6 lg:pr-8">
                                 {isEven ? (
                                     /* TITLE on Left */
-                                    <div className="w-full flex justify-center md:justify-end">
+                                    <div className="w-full flex justify-center">
                                         <ScrollFloat
                                             animationDuration={1}
                                             ease="back.out(1.2)"
@@ -124,7 +124,7 @@ export default function AboutSection() {
                             </div>
 
                             {/* Desktop Layout: Right Side Container */}
-                            <div className="hidden md:flex w-full md:w-1/2 flex-col justify-center items-center md:items-start text-center md:text-left md:pl-6 lg:pl-8">
+                            <div className="hidden md:flex w-full flex-col justify-center items-center text-center md:pl-6 lg:pl-8">
                                 {isEven ? (
                                     /* DESCRIPTION on Right */
                                     <motion.div
@@ -140,7 +140,7 @@ export default function AboutSection() {
                                     </motion.div>
                                 ) : (
                                     /* TITLE on Right */
-                                    <div className="w-full flex justify-center md:justify-start">
+                                    <div className="w-full flex justify-center">
                                         <ScrollFloat
                                             animationDuration={1}
                                             ease="back.out(1.2)"
