@@ -156,9 +156,9 @@ function StackedCard({ project, index, total }) {
                 <div className="relative flex-1 w-full bg-gray-50 dark:bg-[#111] rounded-[20px] border border-gray-100 dark:border-white/10 overflow-hidden flex flex-col-reverse md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-6 opacity-100 max-h-[1000px] flex-[1_1_40%]' : 'p-0 opacity-0 max-h-0 flex-[0_0_0%]'} md:!p-8 md:!opacity-100 md:!max-h-[1000px] md:!max-w-[1000px] md:!flex-[1_1_40%]`}>
+                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-6 opacity-100 max-h-[1000px] flex-[1_1_100%]' : 'p-0 opacity-0 max-h-0 flex-[0_0_0%]'} md:!p-8 md:!opacity-100 md:!max-h-[1000px] md:!max-w-[1000px] md:!flex-[1_1_40%]`}>
                         <div className="w-full min-w-[250px]">
-                            <p className="text-gray-600 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-300 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
                                 {project.description}
                             </p>
 
@@ -183,7 +183,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className={`w-full relative overflow-hidden bg-gray-200 dark:bg-[#222] shrink-0 transition-all duration-500 ${showDetails ? 'flex-[1_1_60%]' : 'flex-[1_1_100%]'} md:!flex-[1_1_60%]`}>
+                    <div className={`w-full relative overflow-hidden bg-gray-200 dark:bg-[#222] shrink-0 transition-all duration-500 ${showDetails ? 'flex-[0_0_0%] max-h-0 opacity-0' : 'flex-[1_1_100%] max-h-[1000px] opacity-100'} md:!flex-[1_1_60%] md:!max-h-[1000px] md:!opacity-100`}>
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
@@ -194,7 +194,7 @@ function StackedCard({ project, index, total }) {
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/inner:scale-105"
                         />
                         {/* Gradient fades to merge with the left content area cleanly */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/50 to-transparent w-32 hidden md:block z-10 transition-opacity duration-500 opacity-100"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 dark:from-[#111] via-gray-50/50 dark:via-[#111]/50 to-transparent w-32 hidden md:block z-10 transition-opacity duration-500 opacity-100"></div>
 
                         {/* Interactive overlay on image */}
                         <div className={`absolute inset-0 opacity-0 group-hover/inner:opacity-30 transition-opacity duration-700 pointer-events-none mix-blend-color ${project.bgAccent}`}></div>
