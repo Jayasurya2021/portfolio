@@ -126,7 +126,7 @@ function StackedCard({ project, index, total }) {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-                            className="text-6xl md:text-6xl font-black text-gray-900 dark:text-[#f1f5f9] tracking-tighter leading-none"
+                            className="hidden md:block text-6xl md:text-6xl font-black text-gray-900 dark:text-[#f1f5f9] tracking-tighter leading-none"
                         >
                             0{index + 1}
                         </motion.h2>
@@ -143,12 +143,6 @@ function StackedCard({ project, index, total }) {
 
                     {/* Actions */}
                     <div className="flex items-center gap-3">
-                        <button
-                            onClick={() => setShowDetails(!showDetails)}
-                            className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full border-2 border-gray-200 dark:border-white/20 text-black dark:text-[#f8fafc] font-bold text-xs md:text-sm uppercase tracking-wider hover:bg-gray-100 dark:hover:bg-white/10 transition-all"
-                        >
-                            {showDetails ? "Less" : "More"}
-                        </button>
                         <a
                             href={project.demo}
                             className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 dark:border-white/20 text-black dark:text-[#f8fafc] font-bold text-sm uppercase tracking-wider hover:bg-gray-900 hover:!text-white hover:border-gray-900 transition-all duration-300 transform group-hover:scale-105"
@@ -159,10 +153,10 @@ function StackedCard({ project, index, total }) {
                 </div>
 
                 {/* ── INNER CONTENT AREA ── */}
-                <div className="relative flex-1 w-full bg-gray-50 dark:bg-[#111] rounded-[20px] border border-gray-100 dark:border-white/10 overflow-hidden flex flex-col md:flex-row shadow-inner group/inner">
+                <div className="relative flex-1 w-full bg-gray-50 dark:bg-[#111] rounded-[20px] border border-gray-100 dark:border-white/10 overflow-hidden flex flex-col-reverse md:flex-row shadow-inner group/inner">
 
                     {/* Left Content */}
-                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-6 md:p-8 opacity-100 max-h-[1000px] md:max-w-[1000px]' : 'p-0 opacity-0 max-h-0 md:max-w-0 md:max-h-[1000px]'}`} style={{ flex: showDetails ? '1 1 40%' : '0 0 0%' }}>
+                    <div className={`w-full flex flex-col justify-center relative z-10 bg-gradient-to-r from-gray-50 via-gray-50 to-transparent md:bg-none backdrop-blur-sm md:backdrop-blur-none bg-gray-50 dark:bg-[#111] overflow-hidden transition-all duration-500 ease-in-out ${showDetails ? 'p-6 opacity-100 max-h-[1000px] flex-[1_1_40%]' : 'p-0 opacity-0 max-h-0 flex-[0_0_0%]'} md:!p-8 md:!opacity-100 md:!max-h-[1000px] md:!max-w-[1000px] md:!flex-[1_1_40%]`}>
                         <div className="w-full min-w-[250px]">
                             <p className="text-gray-600 font-medium text-sm md:text-base mb-8 max-w-sm leading-relaxed">
                                 {project.description}
@@ -189,7 +183,7 @@ function StackedCard({ project, index, total }) {
                     </div>
 
                     {/* Right Content / Image */}
-                    <div className="w-full relative overflow-hidden bg-gray-200 dark:bg-[#222] shrink-0 transition-all duration-500" style={{ flex: showDetails ? '1 1 60%' : '1 1 100%' }}>
+                    <div className={`w-full relative overflow-hidden bg-gray-200 dark:bg-[#222] shrink-0 transition-all duration-500 ${showDetails ? 'flex-[1_1_60%]' : 'flex-[1_1_100%]'} md:!flex-[1_1_60%]`}>
                         <motion.img
                             initial={{ scale: 1.15 }}
                             whileInView={{ scale: 1 }}
@@ -200,14 +194,21 @@ function StackedCard({ project, index, total }) {
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/inner:scale-105"
                         />
                         {/* Gradient fades to merge with the left content area cleanly */}
-                        <div className={`absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/50 to-transparent w-32 hidden md:block z-10 transition-opacity duration-500 ${showDetails ? 'opacity-100' : 'opacity-0'}`}></div>
-                        <div className={`absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/50 to-transparent h-24 md:hidden bottom-0 z-10 transition-opacity duration-500 ${showDetails ? 'opacity-100' : 'opacity-0'}`}></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/50 to-transparent w-32 hidden md:block z-10 transition-opacity duration-500 opacity-100"></div>
 
                         {/* Interactive overlay on image */}
                         <div className={`absolute inset-0 opacity-0 group-hover/inner:opacity-30 transition-opacity duration-700 pointer-events-none mix-blend-color ${project.bgAccent}`}></div>
                     </div>
 
                 </div>
+
+                {/* Mobile Bottom More Button */}
+                <button
+                    onClick={() => setShowDetails(!showDetails)}
+                    className="md:hidden mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-full border-2 border-gray-200 dark:border-white/20 text-black dark:text-[#f8fafc] font-bold text-xs uppercase tracking-wider hover:bg-gray-100 dark:hover:bg-white/10 transition-all w-full shrink-0"
+                >
+                    {showDetails ? "Less Details" : "More Details"}
+                </button>
             </motion.div>
         </div>
     )
