@@ -72,7 +72,7 @@ export default function FooterSection() {
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="text-3xl font-black tracking-tighter mb-6">
-                            <span>YOUR</span><span className="text-purple-600">AGENCY</span>
+                            <span>C</span><span className="text-purple-600">D<sup>2</sup></span>
                         </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-sm mb-8">
                             We build modern digital experiences through innovative development, scalable architecture, and long-term technology partnerships.
