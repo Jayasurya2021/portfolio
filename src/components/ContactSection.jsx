@@ -91,7 +91,7 @@ export default function ContactSection() {
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
                                         onSubmit={handleSubmit}
-                                        className="space-y-6 md:space-y-8 p-7 border-1 border-gray-200 rounded-xl"
+                                        className="space-y-6 md:space-y-8 p-7 border border-gray-200 rounded-xl"
                                     >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                             <div>
@@ -136,8 +136,8 @@ export default function ContactSection() {
                                                     <option value="under-5k">Under 5,000</option>
                                                     <option value="5k-10k">5,000 - 10,000</option>
                                                     <option value="10k-25k">10,000 - 25,000</option>
-                                                    {/* <option value="25k-50k">$25,000 - $50,000</option>
-                                                <option value="50k-plus">$50,000+</option> */}
+                                                    <option value="25k-50k">25,000 and Above</option>
+                                                {/* <option value="50k-plus">$50,000+</option> */}
                                                 </select>
                                             </div>
                                             <div>
@@ -145,6 +145,7 @@ export default function ContactSection() {
                                                 <select name="timeline" value={formData.timeline} onChange={handleChange} className={inputClasses}>
                                                     <option value="" disabled>Select expected timeline</option>
                                                     <option value="asap">As soon as possible</option>
+                                                    <option value="1-3-months">2 - 3 Weeks</option>
                                                     <option value="1-3-months">1 - 3 months</option>
                                                     <option value="3-6-months">3 - 6 months</option>
                                                     <option value="6-plus-months">6+ months</option>
