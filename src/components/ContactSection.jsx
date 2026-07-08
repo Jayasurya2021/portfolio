@@ -91,7 +91,7 @@ export default function ContactSection() {
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
                                         onSubmit={handleSubmit}
-                                        className="space-y-6 md:space-y-8 p-4 border-1 border-gray-200 rounded-xl"
+                                        className="space-y-6 md:space-y-8 p-7 border-1 border-gray-200 rounded-xl"
                                     >
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                             <div>
