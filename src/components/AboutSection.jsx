@@ -15,7 +15,7 @@ const aboutBlocks = [
     },
     {
         id: "03",
-        title: "Tech Stack",
+        title: "TECH STACK",
         desc: "We leverage modern technologies including React, Node.js, Express.js, Django, MongoDB, Tailwind CSS, and cloud deployment platforms to create fast, secure, and future-ready digital products."
     }
 ];
@@ -48,18 +48,31 @@ export default function AboutSection() {
                     const isEven = index % 2 === 0;
 
                     return (
-                        <div key={block.id} className="relative grid grid-cols-1 md:grid-cols-2 items-center w-full">
+                        <div
+                            key={block.id}
+                            className="relative w-full
+                                /* Mobile: stacked flex */
+                                flex flex-col items-center
+                                /* Desktop: 12-col grid */
+                                md:grid md:grid-cols-12 md:gap-x-0 md:items-center"
+                        >
 
-                            {/* Timeline Dot (Center) */}
+                            {/* ── Timeline Dot — columns 6–7, perfectly centered ── */}
                             <motion.div
                                 initial={{ scale: 0, opacity: 0 }}
                                 whileInView={{ scale: 1, opacity: 1 }}
                                 viewport={{ once: false, margin: "-20%" }}
                                 transition={{ duration: 0.6, type: "spring", delay: 0.2 }}
-                                className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-black dark:bg-white rounded-full z-20 border-[4px] border-white dark:border-black shadow-sm"
-                            />
+                                className="hidden md:flex
+                                           md:col-start-6 md:col-end-8
+                                           items-center justify-center
+                                           row-start-1"
+                                style={{ zIndex: 20 }}
+                            >
+                                <span className="w-5 h-5 bg-black dark:bg-white rounded-full border-[4px] border-white dark:border-black shadow-sm block" />
+                            </motion.div>
 
-                            {/* Mobile Layout: Title + Description Stacked */}
+                            {/* ── Mobile Layout: stacked ── */}
                             <div className="md:hidden w-full flex flex-col items-center text-center gap-6">
                                 {/* Mobile Title */}
                                 <div className="w-full flex justify-center">
@@ -90,11 +103,17 @@ export default function AboutSection() {
                                 </motion.div>
                             </div>
 
-                            {/* Desktop Layout: Left Side Container */}
-                            <div className="hidden md:flex w-full flex-col justify-center items-center text-center md:pr-6 lg:pr-8">
+                            {/* ── Desktop Left Area — cols 1–5 ── */}
+                            <div
+                                className="hidden md:flex
+                                           md:col-start-1 md:col-end-6
+                                           row-start-1
+                                           flex-col justify-center items-end
+                                           pr-10 lg:pr-16 xl:pr-20"
+                            >
                                 {isEven ? (
-                                    /* TITLE on Left */
-                                    <div className="w-full flex justify-center">
+                                    /* TITLE on Left (even rows) */
+                                    <div className="flex justify-end">
                                         <ScrollFloat
                                             animationDuration={1}
                                             ease="back.out(1.2)"
@@ -102,45 +121,51 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[2.5rem] md:!text-[5rem] lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
+                                            textClassName="text-[2.5rem] md:text-[3srem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-right"
                                         >
                                             {block.title.toUpperCase()}
                                         </ScrollFloat>
                                     </div>
                                 ) : (
-                                    /* DESCRIPTION on Left */
+                                    /* DESCRIPTION on Left (odd rows) */
                                     <motion.div
                                         initial={{ opacity: 0, x: -40, filter: 'blur(8px)' }}
                                         whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                                         viewport={{ once: false, amount: 0.4 }}
                                         transition={{ duration: 0.8, ease: "easeOut" }}
-                                        className="w-full max-w-[400px]"
+                                        className="max-w-[480px] text-right"
                                     >
-                                        <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-light">
+                                        <p className="text-gray-500 text-lg md:text-lg lg:text-xl xl:text-2xl leading-relaxed font-light">
                                             {block.desc}
                                         </p>
                                     </motion.div>
                                 )}
                             </div>
 
-                            {/* Desktop Layout: Right Side Container */}
-                            <div className="hidden md:flex w-full flex-col justify-center items-center text-center md:pl-6 lg:pl-8">
+                            {/* ── Desktop Right Area — cols 8–12 ── */}
+                            <div
+                                className="hidden md:flex
+                                           md:col-start-8 md:col-end-13
+                                           row-start-1
+                                           flex-col justify-center items-start
+                                           pl-10 lg:pl-16 xl:pl-20"
+                            >
                                 {isEven ? (
-                                    /* DESCRIPTION on Right */
+                                    /* DESCRIPTION on Right (even rows) */
                                     <motion.div
                                         initial={{ opacity: 0, x: 40, filter: 'blur(8px)' }}
                                         whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                                         viewport={{ once: false, margin: "-20%" }}
                                         transition={{ duration: 0.8, ease: "easeOut" }}
-                                        className="w-full max-w-[400px]"
+                                        className="max-w-[480px] text-left"
                                     >
-                                        <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-light">
+                                        <p className="text-gray-500 text-lg md:text-lg lg:text-xl xl:text-2xl  leading-relaxed font-light">
                                             {block.desc}
                                         </p>
                                     </motion.div>
                                 ) : (
-                                    /* TITLE on Right */
-                                    <div className="w-full flex justify-center">
+                                    /* TITLE on Right (odd rows) */
+                                    <div className="flex justify-start">
                                         <ScrollFloat
                                             animationDuration={1}
                                             ease="back.out(1.2)"
@@ -148,7 +173,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[3.5rem] md:!text-[5rem] !lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
+                                            textClassName="text-[2.5rem] md:text-[3srem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-left"
                                         >
                                             {block.title}
                                         </ScrollFloat>
