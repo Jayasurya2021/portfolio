@@ -42,7 +42,7 @@ export default function AboutSection() {
                 style={{ scaleY }}
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1600px] relative z-10 flex flex-col gap-16 sm:gap-32 md:gap-48 lg:gap-[300px]">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1600px] relative z-10 grid grid-cols-1 gap-16 sm:gap-32 md:gap-48 lg:gap-[300px]">
 
                 {aboutBlocks.map((block, index) => {
                     const isEven = index % 2 === 0;

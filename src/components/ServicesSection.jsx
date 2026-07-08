@@ -208,13 +208,22 @@ export default function ServicesSection() {
     return (
         <section id="services" className="relative py-24 overflow-hidden bg-white dark:bg-[#050505]">
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                <div className="flex flex-col mb-12 md:mb-20 pl-4 md:pl-0 gap-3 md:gap-4">
-                    <span className="text-base md:text-lg text-[#9333ea] font-medium tracking-wide">
-                        {'{'} Our Services {'}'}
-                    </span>
-                    <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold uppercase text-gray-900 dark:text-white leading-[1.1] tracking-tight">
-                        EXPLORE WHAT WE CAN DO FOR YOU
-                    </h2>
+                <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center mb-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-[#f1f5f9] tracking-tight pb-5">
+                            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">Services</span>
+                        </h2>
+                        <div className="flex flex-col mb-12 md:mb-20 justify-center items-center pl-4 md:pl-0 gap-3 md:gap-4">
+                            <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold uppercase text-gray-900 dark:text-white leading-[1.1] tracking-tight">
+                                EXPLORE WHAT WE CAN DO FOR YOU
+                            </h2>
+                        </div>
+                    </motion.div>
                 </div>
 
                 <div className="border-t border-gray-200 dark:border-white/10 flex flex-col">
