@@ -28,7 +28,7 @@ export default function HeroVideoBanner() {
                 <div className="text-center mx-auto w-full">
                     <div className="relative mb-4">
                         <motion.h1
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] hero-text-illumination break-words"
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] hero-text-illumination break-words"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 1.6, ease: "easeOut" }}
