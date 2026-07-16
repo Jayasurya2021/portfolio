@@ -198,6 +198,33 @@ export const Header = () => {
           )}
         </AnimatePresence>
 
+        {/* Downward Light Effect */}
+        <AnimatePresence>
+          {activeSection === "#hero" && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="absolute left-[3%] right-[3%] -bottom-[1px] flex justify-center pointer-events-none z-[-1]"
+            >
+              {/* Core bright line */}
+              <div className="absolute inset-0 bg-purple-400/60 dark:bg-white h-[1px] rounded-full shadow-[0_0_15px_5px_rgba(168,85,247,0.4)] dark:shadow-[0_0_15px_5px_rgba(255,255,255,0.9)]" />
+
+              {/* Upward glow reaching towards the buttons (behind the frosted glass) */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[95%] h-[40px] bg-purple-400/20 dark:bg-white/30 blur-2xl rounded-full" />
+
+              {/* Downward light spread (Wide and soft) */}
+              <div className="absolute top-[1px] left-1/2 -translate-x-1/2 w-[140%] h-[300px] bg-gradient-to-b from-purple-400/20 dark:from-white/20 via-purple-400/5 dark:via-white/5 to-transparent blur-2xl" />
+
+              {/* Inner concentrated downward glow */}
+              <div className="absolute top-[1px] left-1/2 -translate-x-1/2 w-[110%] h-[300px] bg-gradient-to-b from-purple-400/30 dark:from-white/30 to-transparent blur-xl" />
+
+              {/* Most intense light right at the slit */}
+              <div className="absolute top-[1px] left-1/2 -translate-x-1/2 w-[98%] h-[90px] bg-gradient-to-b from-purple-400/40 dark:from-white/40 to-transparent blur-lg" />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </motion.header>
   );
