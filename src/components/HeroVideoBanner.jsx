@@ -36,7 +36,7 @@ export default function HeroVideoBanner() {
                             We Build <span className="italic"> Digital Products </span> That Drive Growth.
                         </motion.h1>
                         <motion.h1
-                            className="absolute top-0 left-0 w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] break-words hero-reflection-overlay pointer-events-none select-none"
+                            className="absolute top-0 left-0 w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] break-words hero-reflection-overlay pointer-events-none select-none dark:hidden"
                             aria-hidden="true"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
