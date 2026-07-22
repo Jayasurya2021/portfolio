@@ -8,18 +8,18 @@ import { ExternalLink, Code2, CheckCircle2, Info, X } from 'lucide-react'
 const projects = [
     {
         id: 1,
-        title: 'Aura Heights Tower',
-        subtitle: 'Commercial Skyscraper · Dubai',
+        title: 'LUXE.',
+        subtitle: 'The New Essentials',
         description:
-            'A 72-floor mixed-use tower integrating smart building automation, green terraces, and premium residential floors. Delivered 3 months ahead of schedule with zero structural defects.',
+            'Discover our latest collection of premium menswear. Designed for comfort, tailored for perfection.',
         features: [
-            'LEED Platinum Certified design',
-            'AI-driven climate and lighting automation',
-            'Seismic base isolation system',
+            'Premium menswear collection',
+            'Modern e-commerce experience',
+            'Responsive luxury design',
         ],
-        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
-        tech: ['Smart Automation', 'Green Arch', 'BIM Modeling'],
-        demo: '#',
+        image: '/assets/luxe.png',
+        tech: ['E-Commerce', 'Responsive Design', 'React'],
+        demo: 'https://nodejs-yveh.vercel.app/',
         repo: '#',
         textAccent: 'text-[#7e22ce]',
         // bgAccent: 'bg-[#7e22ce]',
