@@ -35,7 +35,7 @@ export default function ContactSection() {
 
     return (
         <section id="contact" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] py-16 md:py-20">
-            <div className="container mx-auto px-6 lg:px-12 xl:px-20 max-w-[1400px]">
+            <div className="container mx-auto px-6 lg:px-12 xl:px-20 xl:w-[1100px] 2xl:w-[1200px] max-w-[1400px]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                     {/* Left Side: Header and Text */}
                     <motion.div
