@@ -35,7 +35,7 @@ export default function ContactSection() {
 
     return (
         <section id="contact" className="relative w-full bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] py-16 md:py-20">
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+            <div className="container mx-auto px-6 lg:px-12 xl:px-20 max-w-[1400px]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                     {/* Left Side: Header and Text */}
                     <motion.div
@@ -137,7 +137,7 @@ export default function ContactSection() {
                                                     <option value="5k-10k">5,000 - 10,000</option>
                                                     <option value="10k-25k">10,000 - 25,000</option>
                                                     <option value="25k-50k">25,000 and Above</option>
-                                                {/* <option value="50k-plus">$50,000+</option> */}
+                                                    {/* <option value="50k-plus">$50,000+</option> */}
                                                 </select>
                                             </div>
                                             <div>
