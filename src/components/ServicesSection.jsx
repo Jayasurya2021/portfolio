@@ -84,6 +84,7 @@ const services = [
 
 function ServiceRow({ service, index, isExpanded, onToggle }) {
     const [isHovered, setIsHovered] = useState(false);
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
     const x = useSpring(0, { stiffness: 300, damping: 30 });
     const y = useSpring(0, { stiffness: 300, damping: 30 });
     const rotate = useSpring(0, { stiffness: 300, damping: 30 });
@@ -124,7 +125,7 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
                     translateY: '-50%'
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: (isHovered && !isExpanded) ? 1 : 0, scale: (isHovered && !isExpanded) ? 1 : 0.8 }}
+                animate={{ opacity: (isHovered && !isExpanded && !isButtonHovered) ? 1 : 0, scale: (isHovered && !isExpanded && !isButtonHovered) ? 1 : 0.8 }}
                 transition={{ duration: 0.2 }}
                 className="pointer-events-none absolute left-0 top-0 z-50 hidden md:block overflow-hidden rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-[220px] h-[140px]"
             >
@@ -148,14 +149,28 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
                 </div>
 
                 {/* Right Side Icons */}
-                <div className="relative z-10 shrink-0 ml-4 hidden sm:flex items-center justify-center pr-4 md:pr-0">
+                <div 
+                    className="relative z-10 shrink-0 ml-4 hidden sm:flex items-center justify-center pr-4 md:pr-0"
+                    onMouseEnter={() => setIsButtonHovered(true)}
+                    onMouseLeave={() => setIsButtonHovered(false)}
+                >
                     {isExpanded ? (
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                            <X size={24} strokeWidth={1.5} />
+                        <div className="h-12 md:h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 ease-out w-12 md:w-14 group-hover:w-[110px] group-hover:border-gray-400 dark:group-hover:border-gray-500">
+                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap">
+                                <X size={24} strokeWidth={1.5} className="shrink-0" />
+                                <span className="font-medium text-sm md:text-base opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[100px] transition-all duration-300 ease-out group-hover:ml-2">
+                                    Close
+                                </span>
+                            </div>
                         </div>
                     ) : (
-                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center transition-all group-hover:border-[#9333ea]">
-                            <Plus size={24} strokeWidth={1.5} className="text-gray-400 dark:text-gray-500 group-hover:text-[#9333ea] transition-colors" />
+                        <div className="h-12 md:h-14 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center transition-all duration-300 ease-out group-hover:border-[#9333ea] w-12 md:w-14 group-hover:w-[140px] hover:bg-[#9333ea]/5 dark:hover:bg-[#9333ea]/10">
+                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap">
+                                <Plus size={24} strokeWidth={1.5} className="text-gray-400 dark:text-gray-500 group-hover:text-[#9333ea] transition-colors shrink-0" />
+                                <span className="text-[#9333ea] font-medium text-sm md:text-base opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[100px] transition-all duration-300 ease-out group-hover:ml-1">
+                                    Show More
+                                </span>
+                            </div>
                         </div>
                     )}
                 </div>
@@ -207,8 +222,8 @@ export default function ServicesSection() {
 
     return (
         <section id="services" className="relative py-24 overflow-hidden bg-white dark:bg-[#050505]">
-            <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center mb-12">
+            <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px] relative z-10">
+                <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px] relative z-10 text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

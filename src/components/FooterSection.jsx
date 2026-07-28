@@ -37,7 +37,7 @@ export default function FooterSection() {
 
     return (
         <footer className="bg-white dark:bg-[#0a0a0a] text-black dark:text-[#f8fafc] pt-20 md:pt-20 pb-8 border-t border-gray-100 dark:border-white/10">
-            <div className="container mx-auto px-4 lg:px-12 max-w-[1600px]">
+            <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px]">
 
                 {/* CTA Section */}
                 <motion.div

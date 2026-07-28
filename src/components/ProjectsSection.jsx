@@ -231,7 +231,7 @@ export default function ProjectsSection() {
             </div>
 
             {/* Section Header */}
-            <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center mb-12">
+            <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px] relative z-10 text-center mb-12">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -250,7 +250,7 @@ export default function ProjectsSection() {
             </div>
 
             {/* Stacked Cards Container */}
-            <div className="relative w-full px-6 max-w-7xl mx-auto pb-[10vh]">
+            <div className="relative w-full px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px] mx-auto pb-[10vh]">
                 {projects.map((project, i) => (
                     <StackedCard
                         key={project.id}

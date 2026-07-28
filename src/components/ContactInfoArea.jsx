@@ -5,7 +5,7 @@ import { MapPin, Mail, Phone, Clock } from 'lucide-react';
 export default function ContactInfoArea() {
     return (
         <section className="relative w-full bg-gray-50 dark:bg-[#111] text-black dark:text-[#f8fafc] py-20 border-t border-b border-gray-100 dark:border-white/10">
-            <div className="container mx-auto px-6 lg:px-12 max-w-[1600px]">
+            <div className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px]">
                 
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
