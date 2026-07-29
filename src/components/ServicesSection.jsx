@@ -149,25 +149,25 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
                 </div>
 
                 {/* Right Side Icons */}
-                <div
-                    className="relative z-10 shrink-0 ml-4 hidden sm:flex items-center justify-center pr-4 md:pr-0"
+                <div 
+                    className="relative z-10 shrink-0 ml-3 sm:ml-4 flex items-center justify-center pr-2 sm:pr-4 md:pr-0"
                     onMouseEnter={() => setIsButtonHovered(true)}
                     onMouseLeave={() => setIsButtonHovered(false)}
                 >
                     {isExpanded ? (
-                        <div className="h-12 md:h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 ease-out w-12 md:w-14 group-hover:w-[110px] group-hover:border-gray-400 dark:group-hover:border-gray-500">
-                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap">
-                                <X size={24} strokeWidth={1.5} className="shrink-0" />
-                                <span className="font-medium text-sm md:text-base opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[100px] transition-all duration-300 ease-out group-hover:ml-2">
+                        <div className="h-9 sm:h-11 md:h-14 px-3 sm:px-4 md:px-0 md:w-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 ease-out md:group-hover:w-[110px] group-hover:border-gray-400 dark:group-hover:border-gray-500">
+                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap gap-1 sm:gap-1.5">
+                                <X size={18} strokeWidth={1.5} className="shrink-0" />
+                                <span className="font-medium text-xs sm:text-sm md:text-base opacity-100 max-w-full md:opacity-0 md:max-w-0 md:group-hover:opacity-100 md:group-hover:max-w-[100px] transition-all duration-300 ease-out">
                                     Close
                                 </span>
                             </div>
                         </div>
                     ) : (
-                        <div className="h-12 md:h-14 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center transition-all duration-300 ease-out group-hover:border-[#9333ea] w-12 md:w-14 group-hover:w-[140px] hover:bg-[#9333ea]/5 dark:hover:bg-[#9333ea]/10">
-                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap">
-                                <Plus size={24} strokeWidth={1.5} className="text-gray-400 dark:text-gray-500 group-hover:text-[#9333ea] transition-colors shrink-0" />
-                                <span className="text-[#9333ea] font-medium text-sm md:text-base opacity-0 max-w-0 group-hover:opacity-100 group-hover:max-w-[100px] transition-all duration-300 ease-out group-hover:ml-1">
+                        <div className="h-9 sm:h-11 md:h-14 px-3 sm:px-4 md:px-0 md:w-14 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center transition-all duration-300 ease-out group-hover:border-[#9333ea] md:group-hover:w-[140px] hover:bg-[#9333ea]/5 dark:hover:bg-[#9333ea]/10">
+                            <div className="flex items-center justify-center overflow-hidden whitespace-nowrap gap-1 sm:gap-1.5">
+                                <Plus size={18} strokeWidth={1.5} className="text-[#9333ea] md:text-gray-400 dark:md:text-gray-500 md:group-hover:text-[#9333ea] transition-colors shrink-0" />
+                                <span className="text-[#9333ea] font-medium text-xs sm:text-sm md:text-base opacity-100 max-w-full md:opacity-0 md:max-w-0 md:group-hover:opacity-100 md:group-hover:max-w-[100px] transition-all duration-300 ease-out">
                                     Show More
                                 </span>
                             </div>
@@ -206,7 +206,7 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
                                 </ul>
 
                                 {service.image && (
-                                    <div className="shrink-0 w-36 h-36 sm:w-56 sm:h-44 md:w-72 md:h-56 lg:w-80 lg:h-60 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 dark:border-white/15 transition-transform duration-300 hover:scale-[1.02]">
+                                    <div className="lg:hidden shrink-0 w-36 h-36 sm:w-56 sm:h-44 md:w-72 md:h-56 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 dark:border-white/15 transition-transform duration-300 hover:scale-[1.02]">
                                         <img 
                                             src={service.image} 
                                             alt={service.title} 
