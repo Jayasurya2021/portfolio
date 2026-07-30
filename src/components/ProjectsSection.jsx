@@ -37,7 +37,7 @@ const projects = [
             'Lead source visualization',
             'Customer profile management',
         ],
-        image: '/assets/crm.png',
+        image: '/assets/new.png',
         tech: ['Customer Management', 'Sales', 'Analytics'],
         demo: '#',
         repo: '#',

@@ -149,7 +149,7 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
                 </div>
 
                 {/* Right Side Icons */}
-                <div 
+                <div
                     className="relative z-10 shrink-0 ml-3 sm:ml-4 flex items-center justify-center pr-2 sm:pr-4 md:pr-0"
                     onMouseEnter={() => setIsButtonHovered(true)}
                     onMouseLeave={() => setIsButtonHovered(false)}
@@ -207,10 +207,10 @@ function ServiceRow({ service, index, isExpanded, onToggle }) {
 
                                 {service.image && (
                                     <div className="lg:hidden shrink-0 w-36 h-36 sm:w-56 sm:h-44 md:w-72 md:h-56 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border border-gray-200/80 dark:border-white/15 transition-transform duration-300 hover:scale-[1.02]">
-                                        <img 
-                                            src={service.image} 
-                                            alt={service.title} 
-                                            className="w-full h-full object-cover" 
+                                        <img
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-full object-cover"
                                         />
                                     </div>
                                 )}

@@ -83,7 +83,7 @@ export default function AboutSection() {
                                         scrollEnd="bottom center"
                                         stagger={0.03}
                                         containerClassName="overflow-hidden"
-                                        textClassName="text-2xl sm:text-3xl font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white"
+                                        textClassName="text-2xl sm:text-3xl font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white whitespace-nowrap"
                                     >
                                         {block.title}
                                     </ScrollFloat>
@@ -121,7 +121,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[2.5rem] md:text-[3srem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-right"
+                                            textClassName="text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-right whitespace-nowrap"
                                         >
                                             {block.title.toUpperCase()}
                                         </ScrollFloat>
@@ -148,7 +148,7 @@ export default function AboutSection() {
                                            md:col-start-8 md:col-end-13
                                            row-start-1
                                            flex-col justify-center items-start
-                                           pl-10 lg:pl-16 xl:pl-20"
+                                           pl-6 lg:pl-12 xl:pl-16"
                             >
                                 {isEven ? (
                                     /* DESCRIPTION on Right (even rows) */
@@ -173,7 +173,7 @@ export default function AboutSection() {
                                             scrollEnd="bottom center"
                                             stagger={0.03}
                                             containerClassName="overflow-hidden"
-                                            textClassName="text-[2.5rem] md:text-[3srem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-left"
+                                            textClassName="text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.2rem] font-black uppercase tracking-tighter leading-[0.9] text-black dark:text-white text-left whitespace-nowrap"
                                         >
                                             {block.title}
                                         </ScrollFloat>
