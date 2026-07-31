@@ -129,20 +129,19 @@ export const Header = () => {
       {/* Logo */}
       <div className="pointer-events-auto flex items-center z-10">
         <a href="#hero" className="flex items-center group">
-          <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+          <div className="flex items-center leading-none text-xl sm:text-2xl md:text-3xl transition-transform duration-300 group-hover:scale-105">
             <span 
-              className="text-black dark:text-white text-xl sm:text-2xl md:text-3xl" 
+              className="text-black dark:text-white leading-none" 
               style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px" }}
             >
               WEAVE
             </span>
             <span 
-              className="text-xl sm:text-2xl md:text-3xl ml-1.5 md:ml-2 font-bold" 
+              className="ml-1.5 md:ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
               style={{ 
-                fontFamily: "'Codystar', sans-serif", 
+                fontFamily: "'Bitcount Grid Double', sans-serif", 
                 letterSpacing: "1.5px",
-                color: "#a855f7",
-                textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 15px rgba(168, 85, 247, 0.6)"
+                fontSize: "1.4em",
               }}
             >
               SPARK

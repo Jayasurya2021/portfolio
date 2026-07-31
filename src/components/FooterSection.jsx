@@ -72,20 +72,20 @@ export default function FooterSection() {
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer">
-                          <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+                          <div className="flex items-center leading-none text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-105">
                             <span 
-                              className="text-black dark:text-white text-3xl md:text-4xl" 
-                              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px" }}
+                              className="text-black dark:text-white leading-none" 
+                              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px", fontSize: "0.90em" }}
                             >
                               WEAVE
                             </span>
                             <span 
-                              className="text-3xl md:text-4xl ml-2 font-bold" 
+                              className="ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
                               style={{ 
-                                fontFamily: "'Codystar', sans-serif", 
+                                fontFamily: "'Bitcount Grid Double', sans-serif", 
                                 letterSpacing: "1.5px",
-                                color: "#a855f7",
-                                textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 20px rgba(168, 85, 247, 0.6)"
+                                fontSize: "1.3em",
+                                // textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 20px rgba(168, 85, 247, 0.6)"
                               }}
                             >
                               SPARK
@@ -141,10 +141,10 @@ export default function FooterSection() {
                 {/* Bottom Footer */}
                 <div className="pt-8 border-t border-gray-100 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-gray-400 font-light text-sm text-center md:text-left">
-                        © 2026 Your Agency Name. All Rights Reserved.
+                        © 2026 WeaveSpark. All Rights Reserved.
                     </p>
                     <p className="text-gray-400 font-light text-sm text-center md:text-right">
-                        Designed & Developed by Your Agency Name.
+                        Designed & Developed by WeaveSpark.
                     </p>
                 </div>
             </div>
