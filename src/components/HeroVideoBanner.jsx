@@ -40,7 +40,7 @@ export default function HeroVideoBanner() {
                     className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px]"
                     style={{ opacity, scale, filter }}
                 >
-                    <div className="text-center mx-auto w-full pt-10 sm:pt-0">
+                    <div className="text-center mx-auto w-full mt-20 pt-10 sm:pt-0">
                         <div className="relative mb-4">
                             <motion.h1
                                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5.5rem] 2xl:text-[9rem] font-normal leading-tight md:leading-[1.1] lg:leading-none tracking-normal md:-tracking-[1px] lg:-tracking-[2px] hero-text-illumination break-words"
