@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import MorphText from './MorphText';
 
 export default function HeroVideoBanner() {
     const containerRef = useRef(null);
@@ -69,12 +68,7 @@ export default function HeroVideoBanner() {
                         >
                             From startups to global brands — we design, develop, and deliver high-performing web and mobile solutions that turn ideas into impact.
                         </motion.p>
-                        <div className="relative w-full flex flex-col items-center justify-center min-h-[100px] mt-2 gap-6 lg:gap-8">
-                            {/* MorphText positioned above buttons */}
-                            <div className="flex flex-col items-center justify-center text-center z-10 pointer-events-none">
-                                <MorphText fontSize="clamp(4rem, 5vw, 4rem)" subtext="THE ART OF WORK" />
-                            </div>
-
+                        <div className="relative w-full flex flex-col lg:flex-row items-center justify-center min-h-[100px] mt-2">
                             {/* Buttons centered */}
                             <motion.div
                                 className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-5 w-full px-4 md:px-0 z-10"
