@@ -141,8 +141,8 @@ export const Header = () => {
               style={{ 
                 fontFamily: "'Codystar', sans-serif", 
                 letterSpacing: "1.5px",
-                color: "#3b82f6",
-                textShadow: "0 0 1px #3b82f6, 0 0 1px #3b82f6, 0 0 15px rgba(59, 130, 246, 0.6)"
+                color: "#a855f7",
+                textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 15px rgba(168, 85, 247, 0.6)"
               }}
             >
               SPARK
