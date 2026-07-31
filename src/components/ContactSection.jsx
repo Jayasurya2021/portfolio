@@ -1,6 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown } from 'lucide-react';
+
+const CustomSelect = ({ name, value, onChange, options, placeholder, required, inputClasses }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const selectedOption = options.find(opt => opt.value === value);
+
+    return (
+        <div className="relative w-full" ref={dropdownRef}>
+            {required && (
+                <input
+                    tabIndex={-1}
+                    autoComplete="off"
+                    style={{ opacity: 0, height: 0, position: 'absolute', pointerEvents: 'none' }}
+                    value={value}
+                    onChange={() => {}}
+                    required={required}
+                />
+            )}
+            <div 
+                className={`${inputClasses} flex justify-between items-center cursor-pointer ${isOpen ? 'ring-2 ring-purple-500 border-purple-500 dark:border-purple-500' : ''}`}
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                <span className={value ? "text-black dark:text-[#f8fafc]" : "text-gray-400"}>
+                    {selectedOption ? selectedOption.label : placeholder}
+                </span>
+                <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+            </div>
+            
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute z-50 w-full mt-2 bg-white dark:bg-[#111] border border-gray-200 dark:border-white/20 rounded-xl overflow-hidden shadow-2xl"
+                    >
+                        <div className="max-h-60 overflow-y-auto">
+                            {options.map((option) => (
+                                <div 
+                                    key={option.value}
+                                    className={`px-4 py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-white/10 transition-colors text-black dark:text-[#f8fafc] ${value === option.value ? 'bg-gray-50 dark:bg-white/5' : ''}`}
+                                    onClick={() => {
+                                        onChange({ target: { name, value: option.value } });
+                                        setIsOpen(false);
+                                    }}
+                                >
+                                    {option.label}
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -117,40 +185,58 @@ export default function ContactSection() {
 
                                         <div>
                                             <label className={labelClasses}>Project Type *</label>
-                                            <select required name="projectType" value={formData.projectType} onChange={handleChange} className={inputClasses}>
-                                                <option value="" disabled>Select a project type</option>
-                                                <option value="web-development">Web Development</option>
-                                                <option value="mobile-app">Mobile App Development</option>
-                                                <option value="ecommerce">E-Commerce Solution</option>
-                                                <option value="ui-ux">UI/UX Design</option>
-                                                <option value="custom-software">Custom Software</option>
-                                                <option value="other">Other</option>
-                                            </select>
+                                            <CustomSelect 
+                                                required 
+                                                name="projectType" 
+                                                value={formData.projectType} 
+                                                onChange={handleChange} 
+                                                inputClasses={inputClasses}
+                                                placeholder="Select a project type"
+                                                options={[
+                                                    { value: "web-development", label: "Web Development" },
+                                                    { value: "mobile-app", label: "Mobile App Development" },
+                                                    { value: "ecommerce", label: "E-Commerce Solution" },
+                                                    { value: "ui-ux", label: "UI/UX Design" },
+                                                    { value: "custom-software", label: "Custom Software" },
+                                                    { value: "other", label: "Other" }
+                                                ]}
+                                            />
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                                             <div>
                                                 <label className={labelClasses}>Budget Range</label>
-                                                <select name="budget" value={formData.budget} onChange={handleChange} className={inputClasses}>
-                                                    <option value="" disabled>Select budget range</option>
-                                                    <option value="under-5k">Under 5,000</option>
-                                                    <option value="5k-10k">5,000 - 10,000</option>
-                                                    <option value="10k-25k">10,000 - 25,000</option>
-                                                    <option value="25k-50k">25,000 and Above</option>
-                                                    {/* <option value="50k-plus">$50,000+</option> */}
-                                                </select>
+                                                <CustomSelect 
+                                                    name="budget" 
+                                                    value={formData.budget} 
+                                                    onChange={handleChange} 
+                                                    inputClasses={inputClasses}
+                                                    placeholder="Select budget range"
+                                                    options={[
+                                                        { value: "under-5k", label: "Under 5,000" },
+                                                        { value: "5k-10k", label: "5,000 - 10,000" },
+                                                        { value: "10k-25k", label: "10,000 - 25,000" },
+                                                        { value: "25k-50k", label: "25,000 and Above" }
+                                                    ]}
+                                                />
                                             </div>
                                             <div>
                                                 <label className={labelClasses}>Expected Timeline</label>
-                                                <select name="timeline" value={formData.timeline} onChange={handleChange} className={inputClasses}>
-                                                    <option value="" disabled>Select expected timeline</option>
-                                                    <option value="asap">As soon as possible</option>
-                                                    <option value="1-3-months">2 - 3 Weeks</option>
-                                                    <option value="1-3-months">1 - 3 months</option>
-                                                    <option value="3-6-months">3 - 6 months</option>
-                                                    <option value="6-plus-months">6+ months</option>
-                                                    <option value="not-sure">Not sure yet</option>
-                                                </select>
+                                                <CustomSelect 
+                                                    name="timeline" 
+                                                    value={formData.timeline} 
+                                                    onChange={handleChange} 
+                                                    inputClasses={inputClasses}
+                                                    placeholder="Select expected timeline"
+                                                    options={[
+                                                        { value: "asap", label: "As soon as possible" },
+                                                        { value: "2-3-weeks", label: "2 - 3 Weeks" },
+                                                        { value: "1-3-months", label: "1 - 3 months" },
+                                                        { value: "3-6-months", label: "3 - 6 months" },
+                                                        { value: "6-plus-months", label: "6+ months" },
+                                                        { value: "not-sure", label: "Not sure yet" }
+                                                    ]}
+                                                />
                                             </div>
                                         </div>
 
