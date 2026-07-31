@@ -37,7 +37,7 @@ export default function HeroVideoBanner() {
                         background-image: linear-gradient(to bottom, rgba(255, 244, 220, 0.12) 0%, rgba(255, 244, 220, 0.07) 8%, rgba(255, 244, 220, 0.02) 15%, transparent 20%);
                     }
                 `}</style>
-                <motion.div 
+                <motion.div
                     className="w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 max-w-[1920px]"
                     style={{ opacity, scale, filter }}
                 >
@@ -69,39 +69,46 @@ export default function HeroVideoBanner() {
                         >
                             From startups to global brands — we design, develop, and deliver high-performing web and mobile solutions that turn ideas into impact.
                         </motion.p>
-                        <motion.div
-                            className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 w-full px-4 md:px-0"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 2.0, ease: "easeOut" }}
-                        >
-                            <MorphText fontSize="clamp(1.2rem, 2.5vw, 1.8rem)" />
-                            <a
-                                className="max-w-[300px] md:w-auto md:max-w-none justify-center group px-6 md:px-8 py-3.5 md:py-4.5 flex gap-2 items-center bg-black text-sm md:text-base font-medium -tracking-[0.2px] leading-5 text-white rounded-full hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white transition-all duration-300 shadow-sm border border-gray-200 dark:border-white/10"
-                                href="#projects" onClick={(e) => handleScroll(e, '#projects')} data-discover="true"><span
-                                    className="relative inline-block overflow-hidden text-white dark:text-black"><span
-                                        className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">EXPLORE
-                                        PROJECTS</span><span
-                                            className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">EXPLORE
-                                        PROJECTS</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                            height="24" viewBox="0 0 24 24" fill="none"
-                                            className="transition-transform duration-300 group-hover:translate-x-1 text-white dark:text-black">
-                                    <path
-                                        d="M17.9941 5.25293C18.0771 5.253 18.1559 5.26997 18.2305 5.29492C18.2472 5.30045 18.2648 5.30381 18.2812 5.31055C18.3311 5.33127 18.3781 5.35722 18.4219 5.3877C18.4586 5.41309 18.4937 5.44192 18.5264 5.47461C18.6455 5.59379 18.7132 5.74352 18.7354 5.89844C18.7383 5.91968 18.7401 5.94112 18.7412 5.96289C18.7424 5.98346 18.7447 6.00382 18.7441 6.02441L18.7471 14.9941C18.747 15.4081 18.4103 15.744 17.9961 15.7441C17.5822 15.7438 17.2462 15.408 17.2461 14.9941L17.2441 7.81641L6.53027 18.5312C6.23737 18.824 5.76257 18.8241 5.46973 18.5312C5.1769 18.2384 5.17698 17.7636 5.46973 17.4707L16.1885 6.75098L8.99805 6.75C8.58403 6.74971 8.24816 6.41381 8.24805 6C8.24822 5.5859 8.58474 5.24985 8.99902 5.25L17.9941 5.25293Z"
-                                        fill="currentColor" />
-                                </svg></a>
-                            <a
-                                className="max-w-[200px] md:w-auto md:max-w-none justify-center group px-6 md:px-8 py-3.5 md:py-4.5 flex gap-2 items-center bg-white border border-black text-sm md:text-base font-medium -tracking-[0.2px] leading-5 text-black rounded-full hover:bg-gray-100 dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10 transition-all duration-300"
-                                href="#contact" onClick={(e) => handleScroll(e, '#contact')} data-discover="true"><span
-                                    className="relative inline-block overflow-hidden "><span
-                                        className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">CONTACT
-                                        US</span>
-                                    <span
-                                        className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">CONTACT
-                                        US</span>
-                                </span>
-                            </a>
-                        </motion.div>
+                        <div className="relative w-full flex flex-col lg:flex-row items-center justify-center min-h-[100px] mt-2">
+                            {/* MorphText positioned on far left with large font size intact */}
+                            <div className="lg:absolute lg:-left-20 xl:-left-28 2xl:-left-36 lg:top-1/2 lg:-translate-y-1/2 mb-6 lg:mb-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none">
+                                <MorphText fontSize="clamp(4rem, 5vw, 4rem)" subtext="THE ART OF WORK" />
+                            </div>
+
+                            {/* Buttons centered */}
+                            <motion.div
+                                className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-5 w-full px-4 md:px-0 z-10"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 1, delay: 2.0, ease: "easeOut" }}
+                            >
+                                <a
+                                    className="max-w-[300px] md:w-auto md:max-w-none justify-center group px-6 md:px-8 py-3.5 md:py-4.5 flex gap-2 items-center bg-black text-sm md:text-base font-medium -tracking-[0.2px] leading-5 text-white rounded-full hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white transition-all duration-300 shadow-sm border border-gray-200 dark:border-white/10"
+                                    href="#projects" onClick={(e) => handleScroll(e, '#projects')} data-discover="true"><span
+                                        className="relative inline-block overflow-hidden text-white dark:text-black"><span
+                                            className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">EXPLORE
+                                            PROJECTS</span><span
+                                                className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">EXPLORE
+                                            PROJECTS</span></span><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                className="transition-transform duration-300 group-hover:translate-x-1 text-white dark:text-black">
+                                        <path
+                                            d="M17.9941 5.25293C18.0771 5.253 18.1559 5.26997 18.2305 5.29492C18.2472 5.30045 18.2648 5.30381 18.2812 5.3877C18.4586 5.41309 18.4937 5.44192 18.4219 5.3877C18.4586 5.41309 18.4937 5.44192 18.5264 5.47461C18.6455 5.59379 18.7132 5.74352 18.7354 5.89844C18.7383 5.91968 18.7401 5.94112 18.7412 5.96289C18.7424 5.98346 18.7447 6.00382 18.7441 6.02441L18.7471 14.9941C18.747 15.4081 18.4103 15.744 17.9961 15.7441C17.5822 15.7438 17.2462 15.408 17.2461 14.9941L17.2441 7.81641L6.53027 18.5312C6.23737 18.824 5.76257 18.8241 5.46973 18.5312C5.1769 18.2384 5.17698 17.7636 5.46973 17.4707L16.1885 6.75098L8.99805 6.75C8.58403 6.74971 8.24816 6.41381 8.24805 6C8.24822 5.5859 8.58474 5.24985 8.99902 5.25L17.9941 5.25293Z"
+                                            fill="currentColor" />
+                                    </svg></a>
+                                <a
+                                    className="max-w-[200px] md:w-auto md:max-w-none justify-center group px-6 md:px-8 py-3.5 md:py-4.5 flex gap-2 items-center bg-white border border-black text-sm md:text-base font-medium -tracking-[0.2px] leading-5 text-black rounded-full hover:bg-gray-100 dark:bg-transparent dark:border-white dark:text-white dark:hover:bg-white/10 transition-all duration-300"
+                                    href="#contact" onClick={(e) => handleScroll(e, '#contact')} data-discover="true"><span
+                                        className="relative inline-block overflow-hidden "><span
+                                            className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">CONTACT
+                                            US</span>
+                                        <span
+                                            className="absolute top-0 left-0 block w-full transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0">CONTACT
+                                            US</span>
+                                    </span>
+                                </a>
+                            </motion.div>
+                        </div>
                     </div>
                 </motion.div>
             </div>

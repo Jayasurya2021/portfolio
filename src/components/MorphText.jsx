@@ -9,6 +9,7 @@ export function MorphText({
   subtext,
   fontSize = "clamp(3rem, 15vw, 10rem)",
   fontFamily = '"Space Grotesk", sans-serif',
+  align = "left",
   className,
   textClassName,
   subtextClassName,
@@ -26,8 +27,11 @@ export function MorphText({
     animationDuration: `${totalDuration}s`,
   }));
 
+  const maxLen = Math.max(...words.map((w) => w.length));
+  const isLeft = align === "left";
+
   return (
-    <div className={cn("morph-text-root relative flex flex-col items-center", className)}>
+    <div className={cn("morph-text-root relative flex flex-col items-center text-center", className)}>
       {/* ── Threshold SVG filter (hidden) ─────────────────────────── */}
       <svg
         aria-hidden="true"
@@ -59,8 +63,8 @@ export function MorphText({
       >
         {/* word rotator */}
         <div
-          className="morph-word-rotator relative flex items-center justify-center"
-          style={{ height: "1.2em", minWidth: "14ch" }}
+          className={cn("morph-word-rotator relative flex items-center justify-center")}
+          style={{ height: "1.2em", minWidth: `${maxLen + 1}ch` }}
         >
           {words.map((word, i) => (
             <span
@@ -87,20 +91,17 @@ export function MorphText({
 
       {/* ── Optional subtext ──────────────────────────────────────── */}
       {subtext && (
-        <p
+        <div
           className={cn(
-            "morph-subtext mt-8 uppercase tracking-[0.2em] text-[#888]",
+            "morph-subtext mt-3 uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 font-medium text-xs sm:text-sm select-none w-full text-center",
             subtextClassName
           )}
           style={{
-            fontSize: "1.2rem",
-            opacity: 0,
-            animation: "morph-fade-up 1s ease-out 1s forwards",
             fontFamily,
           }}
         >
           {subtext}
-        </p>
+        </div>
       )}
 
       {/* ── Scoped keyframes ──────────────────────────────────────── */}
@@ -130,6 +131,32 @@ export function MorphText({
             opacity: 0;
             filter: blur(20px);
             transform: translate(-50%, -50%) scale(1.2);
+          }
+        }
+
+        @keyframes morph-word-rotate-left {
+          0% {
+            opacity: 0;
+            filter: blur(20px);
+            transform: translate(0%, -50%) scale(0.8);
+          }
+          5% {
+            opacity: 0.5;
+            filter: blur(10px);
+          }
+          15%, 35% {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translate(0%, -50%) scale(1);
+          }
+          45% {
+            opacity: 0.5;
+            filter: blur(10px);
+          }
+          50%, 100% {
+            opacity: 0;
+            filter: blur(20px);
+            transform: translate(0%, -50%) scale(1.2);
           }
         }
 
