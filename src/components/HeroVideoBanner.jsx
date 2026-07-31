@@ -69,9 +69,9 @@ export default function HeroVideoBanner() {
                         >
                             From startups to global brands — we design, develop, and deliver high-performing web and mobile solutions that turn ideas into impact.
                         </motion.p>
-                        <div className="relative w-full flex flex-col lg:flex-row items-center justify-center min-h-[100px] mt-2">
-                            {/* MorphText positioned on far left with large font size intact */}
-                            <div className="lg:absolute lg:-left-20 xl:-left-28 2xl:-left-36 lg:top-1/2 lg:-translate-y-1/2 mb-6 lg:mb-0 flex flex-col items-center justify-center text-center z-10 pointer-events-none">
+                        <div className="relative w-full flex flex-col items-center justify-center min-h-[100px] mt-2 gap-6 lg:gap-8">
+                            {/* MorphText positioned above buttons */}
+                            <div className="flex flex-col items-center justify-center text-center z-10 pointer-events-none">
                                 <MorphText fontSize="clamp(4rem, 5vw, 4rem)" subtext="THE ART OF WORK" />
                             </div>
 
