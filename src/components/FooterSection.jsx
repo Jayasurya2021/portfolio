@@ -72,25 +72,24 @@ export default function FooterSection() {
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer">
-                          <div className="flex items-center leading-none text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-105">
-                            <span 
-                              className="text-black dark:text-white leading-none" 
-                              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px", fontSize: "0.90em" }}
-                            >
-                              WEAVE
-                            </span>
-                            <span 
-                              className="ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
-                              style={{ 
-                                fontFamily: "'Bitcount Grid Double', sans-serif", 
-                                letterSpacing: "1.5px",
-                                fontSize: "1.3em",
-                                // textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 20px rgba(168, 85, 247, 0.6)"
-                              }}
-                            >
-                              SPARK
-                            </span>
-                          </div>
+                            <div className="flex items-center leading-none text-3xl md:text-4xl transition-transform duration-300 group-hover:scale-105">
+                                <span
+                                    className="text-black dark:text-white leading-none"
+                                    style={{ fontFamily: "'Monoton', sans-serif", fontSize: "0.90em" }}
+                                >
+                                    WEAVE
+                                </span>
+                                <span
+                                    className="ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600"
+                                    style={{
+                                        fontFamily: "'Bitcount Grid Double', sans-serif",
+                                        fontSize: "1.3em",
+                                        // textShadow: "0 0 1px #a855f7, 0 0 1px #a855f7, 0 0 20px rgba(168, 85, 247, 0.6)"
+                                    }}
+                                >
+                                    SPARK
+                                </span>
+                            </div>
                         </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-sm mb-8">
                             We build modern digital experiences through innovative development, scalable architecture, and long-term technology partnerships.

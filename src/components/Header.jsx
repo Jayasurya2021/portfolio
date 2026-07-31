@@ -132,7 +132,7 @@ export const Header = () => {
           <div className="flex items-center leading-none text-xl sm:text-2xl md:text-3xl transition-transform duration-300 group-hover:scale-105">
             <span 
               className="text-black dark:text-white leading-none" 
-              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px" }}
+              style={{ fontFamily: "'Monoton', sans-serif" }}
             >
               WEAVE
             </span>
@@ -140,7 +140,6 @@ export const Header = () => {
               className="ml-1.5 md:ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
               style={{ 
                 fontFamily: "'Bitcount Grid Double', sans-serif", 
-                letterSpacing: "1.5px",
                 fontSize: "1.4em",
               }}
             >
