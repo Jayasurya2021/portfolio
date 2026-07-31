@@ -71,8 +71,26 @@ export default function FooterSection() {
 
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-                        <div className="text-3xl font-black tracking-tighter mb-6">
-                            <span>Weave</span><span className="text-purple-600">Spark</span>
+                        <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer">
+                          <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+                            <span 
+                              className="text-black dark:text-white text-3xl md:text-4xl" 
+                              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px" }}
+                            >
+                              WEAVE
+                            </span>
+                            <span 
+                              className="text-3xl md:text-4xl ml-2 font-bold" 
+                              style={{ 
+                                fontFamily: "'Codystar', sans-serif", 
+                                letterSpacing: "1.5px",
+                                color: "#3b82f6",
+                                textShadow: "0 0 1px #3b82f6, 0 0 1px #3b82f6, 0 0 20px rgba(59, 130, 246, 0.6)"
+                              }}
+                            >
+                              SPARK
+                            </span>
+                          </div>
                         </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-sm mb-8">
                             We build modern digital experiences through innovative development, scalable architecture, and long-term technology partnerships.

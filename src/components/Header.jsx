@@ -121,16 +121,41 @@ export const Header = () => {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-end md:justify-center px-6 md:px-8 pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-[100] h-24 flex items-center justify-between px-6 md:px-8 pointer-events-none"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
     >
+      {/* Logo */}
+      <div className="pointer-events-auto flex items-center z-10">
+        <a href="#hero" className="flex items-center group">
+          <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+            <span 
+              className="text-black dark:text-white text-xl sm:text-2xl md:text-3xl" 
+              style={{ fontFamily: "'Monoton', sans-serif", letterSpacing: "2px" }}
+            >
+              WEAVE
+            </span>
+            <span 
+              className="text-xl sm:text-2xl md:text-3xl ml-1.5 md:ml-2 font-bold" 
+              style={{ 
+                fontFamily: "'Codystar', sans-serif", 
+                letterSpacing: "1.5px",
+                color: "#3b82f6",
+                textShadow: "0 0 1px #3b82f6, 0 0 1px #3b82f6, 0 0 15px rgba(59, 130, 246, 0.6)"
+              }}
+            >
+              SPARK
+            </span>
+          </div>
+        </a>
+      </div>
 
-      {/* Center Nav Pill */}
-      <motion.div
-        id="header-nav-pill"
-        className="relative flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10"
+      {/* Center Nav Pill Container */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-end md:justify-center px-6 md:px-8 z-0">
+        <motion.div
+          id="header-nav-pill"
+          className="relative flex-shrink-0 pointer-events-auto flex items-center p-1.5 rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-xl border border-black/10 dark:border-white/10"
         animate={{
           boxShadow: isDark
             ? '0 10px 50px rgba(255,255,255,.08), inset 0 1px 1px rgba(255,245,220,0.25)'
@@ -223,6 +248,7 @@ export const Header = () => {
           )}
         </AnimatePresence>
       </motion.div>
+      </div>
     </motion.header>
   );
 };
