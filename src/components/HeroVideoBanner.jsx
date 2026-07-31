@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import MorphText from './MorphText';
 
 export default function HeroVideoBanner() {
     const containerRef = useRef(null);
@@ -69,11 +70,12 @@ export default function HeroVideoBanner() {
                             From startups to global brands — we design, develop, and deliver high-performing web and mobile solutions that turn ideas into impact.
                         </motion.p>
                         <motion.div
-                            className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-5 w-full px-4 md:px-0"
+                            className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 w-full px-4 md:px-0"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 2.0, ease: "easeOut" }}
                         >
+                            <MorphText fontSize="clamp(1.2rem, 2.5vw, 1.8rem)" />
                             <a
                                 className="max-w-[300px] md:w-auto md:max-w-none justify-center group px-6 md:px-8 py-3.5 md:py-4.5 flex gap-2 items-center bg-black text-sm md:text-base font-medium -tracking-[0.2px] leading-5 text-white rounded-full hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white transition-all duration-300 shadow-sm border border-gray-200 dark:border-white/10"
                                 href="#projects" onClick={(e) => handleScroll(e, '#projects')} data-discover="true"><span
