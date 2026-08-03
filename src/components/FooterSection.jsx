@@ -73,10 +73,10 @@ export default function FooterSection() {
 
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-                        <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer">
-                            <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
-                                <img src={logoDark} alt="WeaveSpark Logo" className="h-12 md:h-16 hidden dark:block" />
-                                <img src={logoLight} alt="WeaveSpark Logo" className="h-12 md:h-16 block dark:hidden" />
+                        <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer w-full">
+                            <div className="flex items-center transition-transform duration-300 group-hover:scale-105 mx-auto md:mx-0">
+                                <img src={logoDark} alt="WeaveSpark Logo" className="h-12 md:h-16 hidden dark:block mx-auto md:mx-0" />
+                                <img src={logoLight} alt="WeaveSpark Logo" className="h-12 md:h-16 block dark:hidden mx-auto md:mx-0" />
                             </div>
                         </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-sm mb-8">
