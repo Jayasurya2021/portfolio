@@ -129,7 +129,7 @@ export const Header = () => {
       {/* Logo */}
       <div className="pointer-events-auto flex items-center z-10">
         <a href="#hero" className="flex items-center group">
-          <div className="flex items-center leading-none text-xl sm:text-2xl md:text-3xl transition-transform duration-300 group-hover:scale-105">
+          <div className="flex items-center leading-none text-lg sm:text-xl md:text-2xl transition-transform duration-300 group-hover:scale-105">
             <span 
               className="text-black dark:text-white leading-none" 
               style={{ fontFamily: "'Monoton', sans-serif" }}
@@ -140,7 +140,7 @@ export const Header = () => {
               className="ml-1.5 md:ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
               style={{ 
                 fontFamily: "'Bitcount Grid Double', sans-serif", 
-                fontSize: "1.4em",
+                fontSize: "1.25em",
               }}
             >
               SPARK
