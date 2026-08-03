@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import logoDark from "../assets/Logo/logo-Dark-theme.png";
+import logoLight from "../assets/Logo/logo-LIght-theme.png";
 
 // const GithubIcon = ({ size }) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.03c3.18-.34 6.52-1.6 6.52-7.09 0-1.57-.56-2.83-1.5-3.84.15-.38.65-1.82-.15-3.79 0 0-1.2-.38-3.9 1.45a13.38 13.38 0 0 0-7 0C6.2 1.3 5 1.68 5 1.68c-.8 1.97-.3 3.41-.15 3.79-.94 1.01-1.5 2.27-1.5 3.84 0 5.49 3.34 6.75 6.52 7.09a4.8 4.8 0 0 0-1 3.03V22" /><path d="M9 20c-5 1.5-5-2.5-7-3" /></svg>;
 
@@ -72,22 +74,9 @@ export default function FooterSection() {
                     {/* Brand & Description */}
                     <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
                         <div className="flex items-center justify-center md:justify-start mb-6 group cursor-pointer">
-                            <div className="flex items-center leading-none text-2xl md:text-3xl transition-transform duration-300 group-hover:scale-105">
-                                <span
-                                    className="text-black dark:text-white leading-none"
-                                    style={{ fontFamily: "'Monoton', sans-serif" }}
-                                >
-                                    WEAVE
-                                </span>
-                                <span
-                                    className="ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600"
-                                    style={{
-                                        fontFamily: "'Bitcount Grid Double', sans-serif",
-                                        fontSize: "1.25em",
-                                    }}
-                                >
-                                    SPARK
-                                </span>
+                            <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+                                <img src={logoDark} alt="WeaveSpark Logo" className="h-12 md:h-16 hidden dark:block" />
+                                <img src={logoLight} alt="WeaveSpark Logo" className="h-12 md:h-16 block dark:hidden" />
                             </div>
                         </div>
                         <p className="text-gray-500 font-light leading-relaxed max-w-sm mb-8">

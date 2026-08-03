@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, User, Grid, Layers, Mail, Moon, Sun, MoreHorizontal, X } from "lucide-react";
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import styles from "./Header.module.scss";
+import logoDark from "../assets/Logo/logo-Dark-theme.png";
+import logoLight from "../assets/Logo/logo-LIght-theme.png";
 
 const TimeDisplay = ({ timeZone, locale = "en-GB" }) => {
   const [currentTime, setCurrentTime] = useState("");
@@ -129,22 +131,9 @@ export const Header = () => {
       {/* Logo */}
       <div className="pointer-events-auto flex items-center z-10">
         <a href="#hero" className="flex items-center group">
-          <div className="flex items-center leading-none text-lg sm:text-xl md:text-2xl transition-transform duration-300 group-hover:scale-105">
-            <span 
-              className="text-black dark:text-white leading-none" 
-              style={{ fontFamily: "'Monoton', sans-serif" }}
-            >
-              WEAVE
-            </span>
-            <span 
-              className="ml-1.5 md:ml-2 font-bold leading-none text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600" 
-              style={{ 
-                fontFamily: "'Bitcount Grid Double', sans-serif", 
-                fontSize: "1.25em",
-              }}
-            >
-              SPARK
-            </span>
+          <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+            <img src={logoDark} alt="WeaveSpark Logo" className="h-10 sm:h-12 md:h-14 hidden dark:block" />
+            <img src={logoLight} alt="WeaveSpark Logo" className="h-10 sm:h-12 md:h-14 block dark:hidden" />
           </div>
         </a>
       </div>
