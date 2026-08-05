@@ -132,8 +132,8 @@ export const Header = () => {
       <div className="pointer-events-auto flex items-center z-10">
         <a href="#hero" className="flex items-center group">
           <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
-            <img src={logoDark} alt="WeaveSpark Logo" className="h-10 sm:h-12 md:h-14 hidden dark:block" />
-            <img src={logoLight} alt="WeaveSpark Logo" className="h-10 sm:h-12 md:h-14 block dark:hidden" />
+            <img src={logoDark} alt="WeaveSpark Logo" className="h-12 sm:h-14 md:h-16 hidden dark:block" />
+            <img src={logoLight} alt="WeaveSpark Logo" className="h-12 sm:h-14 md:h-16 block dark:hidden" />
           </div>
         </a>
       </div>
