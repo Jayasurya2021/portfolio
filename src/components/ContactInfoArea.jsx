@@ -34,7 +34,7 @@ export default function ContactInfoArea() {
                             <Mail size={24} />
                         </div>
                         <h4 className="text-sm font-semibold text-gray-900 dark:text-[#f1f5f9] uppercase tracking-wider mb-2">Email</h4>
-                        <p className="text-gray-600 font-light">hello@youragency.com</p>
+                        <p className="text-gray-600 font-light">weavesparkofficial@gmail.com</p>
                     </motion.div>
 
                     {/* Phone Card */}
